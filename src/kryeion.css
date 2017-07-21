@@ -691,6 +691,7 @@
               [aria-view-mode="mobile"] .kr-row .kr-column.column-eleven,
               .kr-row .twelve{
                   width:100%;
+                  float:none;
               }
 
               .kr-column {
