@@ -9,9 +9,9 @@
  *
  */
  
-            body.full-height {
-                position:relative;
-                overflow: auto !important;
+            html.full-height, .full-height body {
+                position:relative !important;
+                overflow: auto;
                 height: 100%;
             }
  
@@ -79,6 +79,107 @@
                 border:0;
             }
 
+            .relative{
+                position:relative;
+            }
+
+            .absolute{
+                position:absolute;
+            }
+                        
+            .fixed{
+                position:fixed;
+            }
+
+            .snap-off{
+              top:0;
+              left:-9999px;
+            }
+
+            .snap-top {
+              top:0;
+              left:auto;
+            }
+
+            .snap-left {
+              top:auto;
+              left:0;
+            }
+
+            .snap-bottom {
+                top:auto;
+                bottom:0;
+            }
+
+            .snap-right {
+                left:auto;
+                right:0;
+            }
+
+            .snap-center {
+               top:50%;
+               left:50%;
+               margin-left:-25%;
+               margin-top:-25%;
+            }
+
+            .snap-top-center{
+                top: 50%;
+                left:auto;
+            }
+
+            .snap-left-center{
+                top: auto;
+                left:50%;
+            }
+
+            .snap-top-left-center {
+                top:0;
+                left:50%;
+            }
+
+            .snap-left-top-center {
+                top:50%;
+                left:0;
+            }
+
+            .snap-top-left {
+                top:0;
+                right:auto;
+                left:0;
+            }
+
+            .snap-top-right {
+                top:0;
+                left:auto;
+                right:0;
+            }
+
+            .clip-all {
+                 /* 
+                   any element that implements this class
+                   must already have {postion:absolute;} 
+                   defined 
+                 */
+                 clip: rect(0 0 0 0);
+            }
+            
+            /* 
+              Bootstrap CSS button enhacements - majorly for <a> <button> <span> 
+            */
+
+            .btn { 
+                white-space: nowrap;
+                -webkit-touch-callout:none;
+                -webkit-tap-highlight-color:transparent;
+                -ms-touch-action: manipulation;
+                    touch-action: manipulation;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                    user-select: none;
+            }
+
             .hidden,
             [hidden] {
                 display:block;
@@ -86,11 +187,96 @@
                 opacity:0;
             }
 
-            .yes-webkit ::-webkit-input-placeholder, /* Chrome 4+/Safri/Opera 15+ */
-            .yes-moz :-moz-placeholder, /* Firefox 18- */
-            .yes-moz ::-moz-placeholder, /* Firefox 19+ */
-            .yes-ms :-ms-input-placeholder { /* Edge/IE 10+ */
-                color:#444444;
+            html .form-group .input-text,
+            html .form-group .input-dropdown {
+                position: relative;
+                padding:0 3px 0 5px;
+                border:1px solid #999999;
+                background-color: #ffffff;
+                -moz-box-shadow:0 1px 12px -7px #5d5d5d inset;
+                -webkit-box-shadow:0 1px 12px -7px #5d5d5d inset;
+                box-shadow:0 1px 12px -7px #5d5d5d inset;
+                position: relative;
+                behavior:url('https://cdn.jsdelivr.net/css3pie/2.0b1/PIE.htc');
+            }
+
+            html .form-group .input-dropdown .input-dropdown-addon {
+                background-color: transparent;
+                display:block;
+                position: absolute;
+                z-index: 300;
+                top:14px;
+                left:auto;
+                right:5px;
+            }
+
+            html .form-group .input-text .form-control,
+            html .form-group .input-dropdown .form-control {
+                border:none;
+                background-color:transparent;
+                box-shadow:none;
+                display:inline-block;
+                height:auto !important;
+                color:#e8e8e8;
+                width:100%;
+                padding:7px 0 7px 0;
+            }
+
+            html .form-group .input-dropdown select.form-control {
+                -moz-appearance:none;
+                -webkit-appearance:none;
+            }
+
+            html .form-group .chevron{
+                margin:0;
+                padding: 0 20px;
+                display: block;
+                height:40px;
+            }
+
+            html .form-group  .chevron:before,
+            html .form-group  .chevron:after{
+                position: absolute;
+                display:block;
+                content: "";
+                border: 10px solid transparent; /* adjust chevron size */
+                z-index:400;
+            }
+
+            html .form-group .chevron:before{
+                top:0;
+                border-top-color: #999999; /* chevron color */
+            }
+
+            html .form-group .chevron:after{
+                top:-2px;
+                border-top-color:#ffffff; /* match background color*/
+            }
+
+            [unclickable],
+            html .form-group  .chevron-btn{
+                pointer-events:none; /* disable clicking on DOM element */
+            }
+
+            html input[readonly],
+            html select[readonly],
+            html textarea[readonly],
+            html .input-text.form-input-disabled,
+            html .input-dropdown.form-input-disabled{
+                cursor:not-allowed; 
+            }
+
+            html input[readonly],
+            html select[readonly],
+            html .input-text.form-input-disabled,
+            html .input-dropdown.form-input-disabled,
+            html textarea[readonly] {
+                border:1px dashed #d5d5d5;
+                background-color: #e5e5e5;
+            }
+
+            html .input-dropdown.form-input-disabled .chevron-btn {
+                 display:none;
             }
 
             input[type=date]::-webkit-clear-button,
@@ -103,9 +289,13 @@
             input[type=date]::-webkit-datetime-edit{
                 letter-spacing:0;
             }
-            input[type=date] {
-                line-height: 1;
-            }
+            
+            .yes-webkit ::-webkit-input-placeholder, /* Chrome 4+/Safri/Opera 15+ */
+            .yes-moz :-moz-placeholder, /* Firefox 18- */
+            .yes-moz ::-moz-placeholder, /* Firefox 19+ */
+            .yes-ms :-ms-input-placeholder { /* Edge/IE 10+ */
+                color:#444444;
+            }             
 
             .borderradius .img-circular,
             .borderradius .yes-opera .img-circular,
@@ -305,126 +495,34 @@
                width:auto\9;
             }
 
-            .scrollable-x{
+            html .scrollable-x{
                overflow: auto; /* disbale all prior settings */
-               overflow-y: hidden;
-               -ms-overflow-y: hidden; /* IE8 */
+               overflow-y: hidden !important;
+               -ms-overflow-y: hidden !important; /* IE8 */
             }
 
-            .scrollable-y{
+            html .scrollable-y{
                overflow: auto; /* disbale all prior settings */
-               overflow-x: hidden;
-               -ms-overflow-x: hidden; /* IE8 */
+               overflow-x: hidden !important;
+               -ms-overflow-x: hidden !important; /* IE8 */
             }
 
-            .not-scrollable{
-               overflow: hidden; /* all browsers */
-               overflow-x: hidden; /* all except IE */
-               -ms-overflow-x: hidden; /* IE7,8 */
-               overflow-y: hidden;
-               -ms-overflow-y: hidden; /* IE7,8 */
-               -ms-overflow-style: none; /* IE10+ */
+            html .not-scrollable{
+               overflow: hidden !important; /* all browsers */
+               overflow-x: hidden !important; /* all except IE */
+               -ms-overflow-x: hidden !important; /* IE7,8 */
+               overflow-y: hidden !important;
+               -ms-overflow-y: hidden !important; /* IE7,8 */
+               -ms-overflow-style: none !important; /* IE10+ */
             }
 
-            .auto-scrollable{
-               overflow: auto; /* all browsers */
-               overflow-x: auto; /* all except IE */
-               -ms-overflow-x: auto; /* IE7,8 */
-               overflow-y: auto;
-               -ms-overflow-y: auto; /* IE7,8 */
-               -ms-overflow-style: none; /* IE10+ */
-            }
-            
-            .relative{
-                position:relative;
-            }
-
-            .absolute{
-                position:absolute;
-            }
-                        
-            .fixed{
-                position:fixed;
-            }
-
-            .snap-off{
-              top:0;
-              left:-9999px;
-            }
-
-            .snap-top {
-              top:0;
-              left:auto;
-            }
-
-            .snap-left {
-              top:auto;
-              left:0;
-            }
-
-            .snap-bottom {
-                top:auto;
-                bottom:0;
-            }
-
-            .snap-right {
-                left:auto;
-                right:0;
-            }
-
-            .snap-center {
-               top:50%;
-               left:50%;
-               margin-left:-25%;
-               margin-top:-25%;
-            }
-
-            .snap-top-center{
-                top: 50%;
-                left:auto;
-            }
-
-            .snap-left-center{
-                top: auto;
-                left:50%;
-            }
-
-            .snap-top-left-center {
-                top:0;
-                left:50%;
-            }
-
-            .snap-left-top-center {
-                top:50%;
-                left:0;
-            }
-
-            .snap-top-left {
-                top:0;
-                right:auto;
-                left:0;
-            }
-
-            .snap-top-right {
-                top:0;
-                left:auto;
-                right:0;
-            }
-            
-            /* 
-              Bootstrap CSS button enhacements - majorly for <a> <button> <span> 
-            */
-
-            .btn { 
-                white-space: nowrap;
-                -webkit-touch-callout:none;
-                -webkit-tap-highlight-color:transparent;
-                -ms-touch-action: manipulation;
-                    touch-action: manipulation;
-                -webkit-user-select: none;
-                -moz-user-select: none;
-                -ms-user-select: none;
-                    user-select: none;
+            html .auto-scrollable{
+               overflow: auto !important; /* all browsers */
+               overflow-x: auto !important; /* all except IE */
+               -ms-overflow-x: auto !important; /* IE7,8 */
+               overflow-y: auto !important;
+               -ms-overflow-y: auto !important; /* IE7,8 */
+               -ms-overflow-style: none !important; /* IE10+ */
             }
             
             /*
@@ -432,7 +530,7 @@
               specifically
             */
 
-            .clearfix:after{
+            html .clearfix:after{
               content: "\0020";
               height:0;
               display:block;
@@ -443,7 +541,7 @@
             }
 
             .yes-old-ms .clearfix { /* IE less than 8 */
-                zoom: 1;
+                *zoom: 1;
             }
             
             .rotate-90 {
@@ -505,6 +603,11 @@
                 width:auto !important;
                 margin-top:0;
                 margin-bottom:0;
+              }
+
+              .kr-row.row-bumped{
+                  padding-left:20px;
+                  padding-right:20px;
               }
 
               [aria-view-mode="mobile"] .kr-row{
