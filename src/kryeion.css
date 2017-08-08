@@ -1,7 +1,7 @@
 /**!
  * @version: v0.0.2
  * @name: Kryeion (http://github.com/isocroft/Kryeion)
- * @copyright: Copyright (c) 2017, CodeDevUp, Inc.
+ * @copyright: Copyright (c) 2017, CodeDev-Team, Inc.
  * @license: MIT (https://github.com/iscroft/Kryeion/blob/master/LICENSE)
  *
  * @author: Ifeora Okechukwu (https://twitter.com/isocroft)
@@ -224,6 +224,13 @@
             html .form-group .input-dropdown select.form-control {
                 -moz-appearance:none;
                 -webkit-appearance:none;
+                appearance:none;
+                text-indent:1px;
+                text-overflow: '';
+            }
+
+            html .form-group .input-dropdown select.form-control:-ms-expand {
+                display: none;
             }
 
             html .form-group .chevron{
