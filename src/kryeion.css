@@ -1,5 +1,5 @@
 /**!
- * @version: v0.0.2
+ * @version: v0.1.2
  * @name: Kryeion (http://github.com/isocroft/Kryeion)
  * @copyright: Copyright (c) 2017, CoolCodes, Oparand Inc.
  * @license: MIT (https://github.com/iscroft/Kryeion/blob/master/LICENSE)
@@ -10,7 +10,7 @@
  */
 
 
-            /* ===== CUSTOM NORMALIZE CSS ===== */
+            /* ===== CUSTOM RESET CSS ===== */
 
             article, 
             aside, 
@@ -166,6 +166,8 @@
                 margin: 1.5em 0; 
                 padding: 0; 
             }
+
+            /* Normalizations */
 
             html,
             body,
@@ -709,25 +711,9 @@
 
             html .input-dropdown.form-input-disabled .chevron-btn {
                  display:none;
-            }
+            }           
 
-            input[type=date]::-webkit-clear-button,
-            input[type=date]::-webkit-inner-spin-button,
-            input[type=number]::-webkit-inner-spin-button,
-            input[type=date]::-webkit-calendar-picker-indicator {
-                display: none;
-            }
-
-            input[type=date]::-webkit-datetime-edit {
-                letter-spacing:0;
-            }
-            
-            .yes-webkit ::-webkit-input-placeholder, /* Chrome 4+/Safri/Opera 15+ */
-            .yes-moz :-moz-placeholder, /* Firefox 18- */
-            .yes-moz ::-moz-placeholder, /* Firefox 19+ */
-            .yes-ms :-ms-input-placeholder { /* Edge/IE 10+ */
-                color:#444444;
-            }             
+            /* Utilities / Helpers */
 
             .borderradius .img-circular,
             .borderradius .yes-opera .img-circular,
@@ -895,15 +881,15 @@
                 border-radius:0px 4px 4px 0px;
             }
               
-            .borderradius .yes-moz .right-half-pill{  
+            .borderradius .yes-moz .right-half-pill {  
                 -moz-border-radius:0px 4px 4px 0px;
             }
 
-            .borderradius .yes-webkit .right-half-pill{
+            .borderradius .yes-webkit .right-half-pill {
                -webkit-border-radius:0px 4px 4px 0px;
             }
 
-            .borderradius .yes-opera .right-half-pill{
+            .borderradius .yes-opera .right-half-pill {
                -o-border-radius:0px 4px 4px 0px;
             }
             
@@ -923,23 +909,25 @@
                 behavior:url('https://cdn.jsdelivr.net/css3pie/2.0b1/PIE.htc');
             }
 
-            .IE8 img.flexible{
+            .IE8 img.flexible {
                width:auto\9;
+               max-width:100%;
+               height:auto;
             }
 
-            html .scrollable-x{
+            .scrollable-x {
                overflow: auto; /* disbale all prior settings */
                overflow-y: hidden !important;
                -ms-overflow-y: hidden !important; /* IE8 */
             }
 
-            html .scrollable-y{
+            .scrollable-y {
                overflow: auto; /* disbale all prior settings */
                overflow-x: hidden !important;
                -ms-overflow-x: hidden !important; /* IE8 */
             }
 
-            html .not-scrollable{
+            .not-scrollable {
                overflow: hidden !important; /* all browsers */
                overflow-x: hidden !important; /* all except IE */
                -ms-overflow-x: hidden !important; /* IE7,8 */
@@ -948,7 +936,7 @@
                -ms-overflow-style: none !important; /* IE10+ */
             }
 
-            html .auto-scrollable{
+            .auto-scrollable {
                overflow: auto !important; /* all browsers */
                overflow-x: auto !important; /* all except IE */
                -ms-overflow-x: auto !important; /* IE7,8 */
@@ -962,7 +950,8 @@
               specifically
             */
 
-            html .clearfix:after{
+           .clearfix:before,
+           .clearfix:after {
               content: "\0020";
               height:0;
               display:block;
@@ -973,13 +962,14 @@
             }
 
             /* 
-                CSS float clear fix enhancements IE less than 8 
+                CSS float clear fix enhancements IE less than version 8 
             */
 
             .yes-old-ms .clearfix { 
                 *zoom: 1;
             }
             
+
             .rotate-90 {
                 filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
                 -ms-filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
