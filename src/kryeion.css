@@ -9,12 +9,246 @@
  */
 
 
- /* ===== CUSTOM NORMALIZE CSS ===== */
+            /* ===== CUSTOM NORMALIZE CSS ===== */
 
+            article, 
+            aside, 
+            details, 
+            figcaption, 
+            figure, 
+            footer, 
+            header, 
+            hgroup, 
+            nav, 
+            section { 
+                display:block; 
+            }
 
+            audio, 
+            canvas, 
+            video { 
+                 display: inline-block;
+                 *display: inline; 
+                 *zoom: 1; 
+            }
 
+            /** Base Styles **/
 
- /* ===== MAIN CSS ===== */
+            body { 
+                 margin: 0; 
+                 font-size: 13px; 
+                 line-height: 1.5; 
+            }
+
+            body, 
+            button, 
+            input, 
+            select, 
+            textarea { 
+                  font-family: sans-serif; 
+                  color: #000;
+            }
+
+            /** IE Fixes **/
+
+            img { 
+               border: 0; 
+               -ms-interpolation-mode: bicubic; 
+            }
+
+            svg:not(:root) { 
+                overflow: hidden; 
+            }
+
+            figure { 
+                margin: 0; 
+            }
+
+            /** Links **/
+
+            a:focus { 
+                outline: thin dotted; 
+            }
+
+            a:hover, 
+            a:active { 
+                outline: 0; 
+            }
+
+            /** Typography **/
+
+            h1 { 
+                font-size: 2em; /* fixes html5 bug */
+            } 
+
+            p { 
+                -webkit-hyphens: auto; 
+                -moz-hyphens: auto; 
+                -epub-hyphens: auto; 
+                hyphens: auto; margin:0;
+            }
+
+            abbr[title] { 
+                border-bottom: 1px dotted; 
+            }
+
+            b,
+            mark, 
+            .mark,
+            strong, 
+            .strong { 
+                font-weight: bold; 
+            }
+
+            small, 
+            .small, 
+            sub, 
+            sup { 
+                font-size: 75%; 
+            }
+
+            ins, 
+            .ins { 
+                background: #ff9; 
+                color: #000; 
+                text-decoration: none; 
+            }
+
+            mark, 
+            .mark { 
+                background: #ff0; 
+                color: #000; 
+                font-style: italic; 
+            }
+
+            hr { 
+                display: block; 
+                height: 1px;
+                border: 0; 
+                border-top: 1px solid #ccc;
+                margin: 1em 0; 
+                padding: 0; 
+            }
+
+            pre, 
+            code, 
+            kbd, 
+            samp { 
+                -moz-osx-font-smoothing: auto;
+                -webkit-font-smoothing: auto;
+                font-family: monospace, serif; 
+                *font-family: 'courier new'; /* supporting IE 6 / 7 / 8 */
+                font-size: 1em; 
+            }
+
+            pre { 
+                white-space: pre-wrap;
+                *white-space: pre; /* supporting IE 6 / 7 / 8 */
+                word-wrap: break-word; 
+            }
+
+            blockquote { 
+                margin: 1.5em 40px; 
+            }
+
+            q { 
+                quotes: none;
+            }
+
+            q:before, 
+            q:after { 
+                content: ''; 
+                content: none; 
+            }
+
+            ul, ol { 
+                margin: 1.5em 0; 
+                padding: 0; 
+            }
+
+            html,
+            body,
+            div,
+            p,
+            ol,
+            ul,
+            li,
+            dl,
+            dt,
+            dd,
+            blockquote,
+            figure,
+            fieldset,
+            legend,
+            textarea,
+            pre,
+            iframe,
+            hr,
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+              margin: 0;
+              padding: 0;
+            }
+
+            img,
+            embed,
+            object,
+            audio,
+            video {
+              max-width: 100%;
+            }
+
+            iframe {
+              border: 0;
+            }
+
+            table {
+              border-collapse: collapse;
+              border-spacing: 0;
+            }
+
+            nav ul, 
+            div ul, 
+            aside > ul, 
+            nav ol, 
+            [class*="widget"] ol, 
+            [class*="widget"] ul, 
+            .commentlist { 
+                 list-style: none; 
+                 list-style-image: none; 
+                 margin: 0; 
+            }
+
+            /* Position subscript and superscript content without affecting line-height: gist.github.com/413930 */
+
+            sub, 
+            sup { 
+                 line-height: 0; 
+                 position: relative; 
+                 vertical-align: baseline; 
+            }
+
+            sup { 
+                 top: -0.5em; 
+            }
+
+            sub { 
+                 bottom: -0.25em; 
+                 bottom:1ex; 
+            }
+
+            /* ===== MAIN CSS ===== */
+
+           body {
+               -ms-box-sizing: content-box;
+                -moz-box-sizing: content-box;
+                -webkit-box-sizing: content-box;
+                box-sizing: content-box;
+           }
 
             body * {
                 -ms-box-sizing: border-box;
@@ -23,8 +257,20 @@
                 box-sizing: border-box;
                 outline: 0 !important;
             }
+
+            body *:before, 
+            body *:after {
+               -ms-box-sizing: inherit;
+               -moz-box-sizing: inherit;
+               -webkit-box-sizing: inherit;
+                      box-sizing: inherit;
+            }
+
+            .full-text-size{
+                font-size:100%; 
+            }
  
-            html.full-height, .full-height body {
+            .full-height, .full-height body {
                 position:relative !important;
                 overflow: auto;
                 height: 100%;
@@ -33,11 +279,16 @@
                 -webkit-box-sizing: content-box;
                 box-sizing: content-box;
                 -webkit-font-smoothing: antialiased;
-                -moz-osx-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                -webkit-text-size-adjust: 100%;
+                -moz-text-size-adjust: 100%;
+                 -ms-text-size-adjust: 100%;
+                     text-size-adjust: 100%;
+                text-rendering: optimizelegibility;
             }
  
-            h1, h2, h3, h4, h5, h6, a, span {
-                text-rendering: optimizelegibility;
+            h1, h2, h3, h4, h5, h6, a {
+                text-rendering: optimizeSpeed;
             }
 
             strong,
@@ -45,9 +296,11 @@
               font-weight: bold;
             }
 
-            em,
-            .italic {
-              font-style: italic;
+            dfn, 
+            em, 
+            .em,
+            .text-italics { 
+                font-style: italic; 
             }
 
             cite,
@@ -100,15 +353,31 @@
                 border:0;
             }
 
-            .relative{
+            .text-leftmost,
+            .no-flexbox .tab-box.anchor-left {
+                text-align:left;
+            } 
+
+            .text-centered,
+            .no-flexbox .tab-box.anchor-center {
+                text-align:center;
+            } 
+
+            .text-rightmost,
+            .no-flexbox .tab-box.anchor-right {
+                text-align:right;
+            } 
+
+            .relative {
                 position:relative;
             }
 
-            .absolute{
+            .operamini .fixed,
+            .absolute {
                 position:absolute;
             }
                         
-            .fixed{
+            .fixed {
                 position:fixed;
             }
 
@@ -116,7 +385,7 @@
                 position:sticky;
             }
 
-            .snap-off{
+            .snap-off {
               top:0;
               left:-9999px;
             }
@@ -192,6 +461,11 @@
             /* 
                 CSS button enhacements - majorly for <a> <button> <span> 
             */
+    
+            [aria-touch-capable="true"] .button {
+                 -ms-touch-action: none;
+                      touch-action: none;
+            }
 
             .button { 
                 white-space: nowrap;
@@ -205,11 +479,35 @@
                     user-select: none;
             }
 
+            .no-flexbox .persona-element,
+            .no-flexbox .inputmedia-element {
+                 width:auto !important;
+            }
+            
+            .flexbox .persona-element,
+            .flexbox .inputmedia-element {
+                  
+            }
+            
+            audio:not([controls]),
+            [conceal] {
+               display:none; 
+            }
+
             .hidden,
             [hidden] {
                 display:block;
                 visibility:hidden;
                 opacity:0;
+            }
+
+            .no-flexbox .tab-box {
+                width:100%;
+                height:auto !important;
+            }
+
+            .flexbox .tab-box {
+
             }
 
             html .form-group .input-text,
