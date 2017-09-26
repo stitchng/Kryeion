@@ -1048,6 +1048,8 @@
                   width: 91.667%;
               }
 
+              /* Trying to avoid media-queries for browsers that don't support it especially Opera Mini */
+
               [aria-view-mode="mobile"] .kr-row .kr-column.column-one,
               [aria-view-mode="mobile"] .kr-row .kr-column.column-two, 
               [aria-view-mode="mobile"] .kr-row .kr-column.column-three,
