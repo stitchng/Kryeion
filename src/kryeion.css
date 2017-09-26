@@ -391,6 +391,15 @@
                 text-rendering: optimizeSpeed;
             }
 
+            [role="header"],
+            [role="footer"],
+            [role="main"],
+            [role="navigation"],
+            [role="complimentary"],
+            [role="site-info"] {
+                 text-overflow:clip;
+            }
+
             strong,
             .strong {
               font-weight: bold;
@@ -595,7 +604,7 @@
                     user-select: none;
             }
 
-            /* Persona Media Object, MixedInput Media Object  */
+            /* Persona Media Object, MixedInput Media Object, Tabs Object  */
 
             .no-flexbox .persona-box,
             .no-flexbox .mixedinput-box,
@@ -619,7 +628,13 @@
             .flexboxlegacy .persona-box,
             .flexboxlegacy .mixedinput-box,
             .flexboxtweener .persona-box,
-            .flexboxtweener .mixedinput-box {
+            .flexboxtweener .mixedinput-box,
+            .flexbox .tab-box,
+            .flexboxlegacy .tab-box,
+            .flexboxtweener .tab-box,
+            .flexbox .tab-box .tab,
+            .flexboxlegacy .tab-box .tab,
+            .flexboxtweener .tab-box .tab {
                   display: -webkit-box;
                   display: -moz-box;
                   display: -ms-box;
@@ -629,12 +644,53 @@
                   display: -moz-flex;
                   display: -o-flex;
                   display: flex;
-                  -moz-flex-direction:row;
-                  -webkit-flex-direction:row;
-                  flex-direction:row;
                   -moz-flex-wrap:nowrap;
                   -webkit-flex-wrap:nowrap;
                   flex-wrap:nowrap;
+            }
+
+            .flexbox .persona-box,
+            .flexbox .mixedinput-box,
+            .flexboxlegacy .persona-box,
+            .flexboxlegacy .mixedinput-box,
+            .flexboxtweener .persona-box,
+            .flexboxtweener .mixedinput-box,
+            .flexbox .tab-box.box-horizontal,
+            .flexboxlegacy .tab-box.box-horizontal,
+            .flexboxtweener .tab-box.box-horizontal,
+            .box-horizontal {
+                 box-orient: horizontal;
+                 -webkit-box-orient:horizontal;
+                 -moz-box-orient:horizontal;
+                  -ms-box-orient:horizontal;
+                  -moz-flex-direction:row;
+                  -ms-flex-direction:row;
+                  -webkit-flex-direction:row;
+                  flex-direction:row;
+            }
+
+            .flexbox .tab-box.box-vertical,
+            .flexboxlegacy .tab-box.box-vertical,
+            .flexboxtweener .tab-box.box-vertical,
+            .box-vertical {
+                  -webkit-box-orient:vertical;
+                  -moz-box-orient:vertical;
+                  -ms-box-orient:vertical;
+                  -moz-flex-direction:column;
+                  -ms-flex-direction:column;
+                  -webkit-flex-direction:column;
+                  flex-direction:column;
+            }
+
+            .flexbox .persona-box,
+            .flexbox .mixedinput-box,
+            .flexboxlegacy .persona-box,
+            .flexboxlegacy .mixedinput-box,
+            .flexboxtweener .persona-box,
+            .flexboxtweener .mixedinput-box,
+            .flexbox .tab-box.anchor-left,
+            .flexboxlegacy .tab-box.anchor-left,
+            .flexboxtweener .tab-box.anchor-left {
                   -moz-justify-content:flex-start;
                   -webkit-justify-content:flex-start;
                   justify-content:flex-start;
@@ -664,6 +720,11 @@
             }
 
             .flexbox .persona-info {
+                -webkit-box-flex:1;
+                box-flex:1;
+                -webkit-flex:1;
+                -moz-flex:1;
+                -ms-flex:1;
                 flex:1;
             }
 
@@ -680,16 +741,43 @@
                 width:auto !important;
                 height:auto !important;
             }
-            
-            /* Tab Component */
 
             .no-flexbox .tab-box {
                 width:100%;
                 height:auto !important;
             }
 
-            .flexbox .tab-box {
+            .tab-box .tab{
+                height:auto !important;
+                text-align:center !important;
+                line-height:normal;
+                vertical-align:middle;
+            }
 
+            .no-flexbox .tab-box .tab,
+            .no-flexbox .tab-box .tab-item {
+                 display:inline-block;
+                 display:-moz-inline-box; /* Support for old Gecko browsers e.g. Camino, Firefox */
+                 *display:inline;
+                 *zoom:1;
+            }
+
+            .flexbox .tab-box .tab-item,
+            .flexboxlegacy .tab-box .tab-item,
+            .flexboxtweener .tab-box .tab-item {
+                -webkit-box-flex: 1 auto;
+                box-flex: 1 auto;
+                -webkit-flex: 1 auto;
+                -moz-flex: 1 auto;
+                -ms-flex: 1 auto;
+                flex: 1 auto;
+            }
+
+            .no-flexbox .tab-box .tab-item {
+                /*padding:15px 10px;*/
+                width:auto !important;
+                height:40px;
+                line-height:40px;
             }
 
             /* Form Input Component */
