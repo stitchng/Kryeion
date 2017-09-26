@@ -4,7 +4,7 @@ A mid-sized CSS library for quick application of custom UI styles. However, it d
 
 ## About
 
-Kryeion makes it really easy to create custom widgets and simple no-tween effects by simply adding a class or set of classes to your HTML. It's really that simple. It works great with [**Modernizr**](https://github.com/Modernizr/Modernizr) classes, [**Browsengine**](https://github.com/isocroft/browsengine). It is still in active development.
+Kryeion makes it really easy to create custom widgets and simple no-tween effects by simply adding a class or set of classes to your HTML. It's really that simple. It works great with [**Modernizr**](https://github.com/Modernizr/Modernizr) and [**Browsengine**](https://github.com/isocroft/browsengine). However, It's still in active development.
 
 ## How to Use
 
