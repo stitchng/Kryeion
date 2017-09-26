@@ -21,7 +21,7 @@ Kryeion makes it really easy to create custom widgets and simple no-tween effect
         <section class="card">
             <h1 class="heading-box text-centered">
                 <small class="fancyheading-pane">
-                        <strong class="fancyheading-placeholder">New Intakes</strong> 
+                        <strong class="fancyheading-pane-placeholder">New Intakes</strong> 
                 </small>
             </h1>
             <ul>
