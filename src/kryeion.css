@@ -223,7 +223,7 @@
 
             nav ul, 
             div ul, 
-            aside > ul, 
+            aside ul, 
             nav ol, 
             [class*="widget"] ol, 
             [class*="widget"] ul, 
