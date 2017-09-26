@@ -598,7 +598,9 @@
             /* Persona Media Object, MixedInput Media Object  */
 
             .no-flexbox .persona-box,
-            .no-flexbox .mixedinput-box {
+            .no-flexbox .mixedinput-box,
+            .flexbox .persona-box,
+            .flexbox .mixedinput-box {
                   width:auto !important;
                   min-height:90px;
             }
@@ -613,8 +615,32 @@
             }
             
             .flexbox .persona-box,
-            .flexbox .mixedinput-box {
-                  
+            .flexbox .mixedinput-box,
+            .flexboxlegacy .persona-box,
+            .flexboxlegacy .mixedinput-box,
+            .flexboxtweener .persona-box,
+            .flexboxtweener .mixedinput-box {
+                  display: -webkit-box;
+                  display: -moz-box;
+                  display: -ms-box;
+                  display: -o-box;
+                  display: -webkit-flex;
+                  display: -ms-flexbox;
+                  display: -moz-flex;
+                  display: -o-flex;
+                  display: flex;
+                  -moz-flex-direction:row;
+                  -webkit-flex-direction:row;
+                  flex-direction:row;
+                  -moz-flex-wrap:nowrap;
+                  -webkit-flex-wrap:nowrap;
+                  flex-wrap:nowrap;
+                  -moz-justify-content:flex-start;
+                  -webkit-justify-content:flex-start;
+                  justify-content:flex-start;
+                  -moz-align-items:flex-start;
+                  -webkit-align-items:flex-start;	
+                  align-items:flex-start;
             }
 
             .flexbox .persona-avatar-box {
