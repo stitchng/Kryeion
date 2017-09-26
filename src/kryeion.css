@@ -894,8 +894,9 @@
             }
             
             /* 
-                The below rule-set assumes you have CSS3PIE [https://css3pie.com/about]
-                add to your web project.
+                The below rule-set assumes you will lke to use
+                CSS3PIE [https://css3pie.com/about] in your
+                web project.
              */
 
             .no-borderradius .yes-old-ms .tablet,
