@@ -1139,6 +1139,43 @@
             }
             
 
+            .fancyheading-pane {
+                color: #B9BCC0;
+                font-size: 17px;
+                position:relative;
+                text-align:center;
+                display: inline-block;
+                bottom: auto;
+                top: -5px;
+                margin-top: 0px;
+            }
+
+            .fancyheading-pane:before, 
+            .fancyheading-pane:after {
+                border-top: 1px solid #E1E2E4;
+                content: "";
+                height: 1px;
+                position: absolute;
+                top: 50%;
+                width: 45%;
+                z-index: 0;
+            }
+
+            .fancyheading-pane:before{
+                left:-45%;
+            }
+
+            .fancyheading-pane:after{
+                left:100%;
+            }
+
+            .fancyheading-pane-placeholder {
+                display:inline-block;
+                padding:3px 6px;
+                color:#4d4d4d;
+                background-color:transparent;
+            }
+
             .rotate-90 {
                 filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
                 -ms-filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
