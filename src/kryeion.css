@@ -7,11 +7,33 @@
  * @author: Ifeora Okechukwu (https://twitter.com/isocroft)
  * 
  */
+
+
+ /* ===== CUSTOM NORMALIZE CSS ===== */
+
+
+
+
+ /* ===== MAIN CSS ===== */
+
+            body * {
+                -ms-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+                outline: 0 !important;
+            }
  
             html.full-height, .full-height body {
                 position:relative !important;
                 overflow: auto;
                 height: 100%;
+                -ms-box-sizing:content-box;
+                -moz-box-sizing: content-box;
+                -webkit-box-sizing: content-box;
+                box-sizing: content-box;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: antialiased;
             }
  
             h1, h2, h3, h4, h5, h6, a, span {
@@ -90,6 +112,10 @@
                 position:fixed;
             }
 
+            .sticky {
+                position:sticky;
+            }
+
             .snap-off{
               top:0;
               left:-9999px;
@@ -164,10 +190,10 @@
             }
             
             /* 
-              Bootstrap CSS button enhacements - majorly for <a> <button> <span> 
+                CSS button enhacements - majorly for <a> <button> <span> 
             */
 
-            .btn { 
+            .button { 
                 white-space: nowrap;
                 -webkit-touch-callout:none;
                 -webkit-tap-highlight-color:transparent;
@@ -292,7 +318,7 @@
                 display: none;
             }
 
-            input[type=date]::-webkit-datetime-edit{
+            input[type=date]::-webkit-datetime-edit {
                 letter-spacing:0;
             }
             
@@ -532,7 +558,7 @@
             }
             
             /*
-              Bootstrap CSS float clear fix enhancements for IE8
+              CSS float clear fix enhancements for IE8
               specifically
             */
 
@@ -546,7 +572,11 @@
                 clear: both;
             }
 
-            .yes-old-ms .clearfix { /* IE less than 8 */
+            /* 
+                CSS float clear fix enhancements IE less than 8 
+            */
+
+            .yes-old-ms .clearfix { 
                 *zoom: 1;
             }
             
@@ -623,22 +653,26 @@
                   margin-bottom:2px;
               }
               
-              .kr-row-fixed{
+              .kr-row-fixed {
                   margin-left: auto;
                   margin-right: auto;
               }
               
-              [class*="1920x1080"] .kr-row.kr-row-fixed{
-                  max-width:1856px; /*  break-point - range */
+              [class*="1920x1080"] .kr-row.kr-row-fixed {
+                  max-width:1856px; /*  hinge-point - range */
               }
 
-              [class*="1280x1024"] .kr-row.kr-row-fixed{   
-                 max-width:1216px; /*  break-point - range */
+              [class*="1366x768"] .kr-row.kr-row-fixed {
+                  max-width: 1302px; /*  hinge-point - range */
+              }
+
+              [class*="1280x1024"] .kr-row.kr-row-fixed {   
+                 max-width:1216px; /*  hinge-point - range */
                  min-width: 1025px; 
               }
 
-              [class*="1024x600"] .kr-row.kr-row-fixed{   
-                 max-width:960px; /*  break-point - range */
+              [class*="1024x600"] .kr-row.kr-row-fixed {   
+                 max-width:960px; /*  hinge-point - range */
                  min-width:601px; 
               }
               
@@ -696,7 +730,7 @@
               [aria-view-mode="mobile"] .kr-row .kr-column.column-nine,
               [aria-view-mode="mobile"] .kr-row .kr-column.column-ten,
               [aria-view-mode="mobile"] .kr-row .kr-column.column-eleven,
-              .kr-row .twelve{
+              .kr-row .twelve {
                   width:100%;
                   float:none;
               }
@@ -713,9 +747,8 @@
                   padding:10px 0;
               }
 
-              .IE6 .kr-column,
               .IE7 .kr-column {	
-                 behavior: url('https://raw.github.com/Schepp/box-sizing-polyfill/master/boxsizing.htc');
+                 *behavior: url('https://raw.github.com/Schepp/box-sizing-polyfill/master/boxsizing.htc');
               }
 
               [aria-view-mode] .kr-column + .kr-column,
