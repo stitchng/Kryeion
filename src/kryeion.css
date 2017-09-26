@@ -1137,7 +1137,10 @@
             .yes-old-ms .clearfix { 
                 *zoom: 1;
             }
-            
+
+            .card {
+
+            }
 
             .fancyheading-pane {
                 color: #B9BCC0;
@@ -1171,7 +1174,7 @@
 
             .fancyheading-pane-placeholder {
                 display:inline-block;
-                padding:3px 6px;
+                padding:3px 8px;
                 color:#4d4d4d;
                 background-color:transparent;
             }
