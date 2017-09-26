@@ -559,6 +559,20 @@
                  */
                  clip: rect(0 0 0 0);
             }
+
+            audio:not([controls]),
+            [conceal] {
+               display:none; 
+            }
+
+            .hidden,
+            [hidden] {
+                display:block;
+                visibility:hidden;
+                opacity:0;
+                -ms-filter:"alpha(opacity=0)";
+                filter:alpha(opacity=0);
+            }
             
             /* 
                 CSS button enhacements - majorly for <a> <button> <span> 
@@ -581,29 +595,67 @@
                     user-select: none;
             }
 
+            /* Persona Media Object, MixedInput Media Object  */
+
             .no-flexbox .persona-box,
-            .no-flexbox .inputmedia-box {
-                 width:auto !important;
+            .no-flexbox .mixedinput-box {
+                  width:auto !important;
+                  min-height:90px;
+            }
+
+            .no-flexbox .persona-box:after,
+            .no-flexbox .mixedinput-box:after {
+                 clear:both;
+                 display:block;
+                 height:0;
+                 width:0;
+                 visibility:hidden;
             }
             
             .flexbox .persona-box,
-            .flexbox .inputmedia-box {
+            .flexbox .mixedinput-box {
                   
             }
-            
-            audio:not([controls]),
-            [conceal] {
-               display:none; 
+
+            .flexbox .persona-avatar-box {
+                flex:initial;
             }
 
-            .hidden,
-            [hidden] {
-                display:block;
-                visibility:hidden;
-                opacity:0;
-                -ms-filter:"alpha(opacity=0)";
-                filter:alpha(opacity=0);
+            .flexbox .persona-avatar-box .persona-avatar,
+            .no-flexbox .persona-avatar-box .persona-avatar {
+                 display:block;
+                 height:100%;
             }
+
+            .flexbox .persona-avatar-box,
+            .no-flexbox .persona-avatar-box {
+                 width:88px;
+                 height:88px;
+                 border:1px solid #5d5d5d;
+                 text-align:center;
+                 line-height:40px;
+                 margin-right:10px;
+            }
+
+            .flexbox .persona-info {
+                flex:1;
+            }
+
+            .no-flexbox .persona-avatar-box {
+                float:left !important;
+            }
+
+            .no-flexbox .persona-info {
+                overflow: hidden;
+            }
+
+            .flexbox .persona-info,
+            .no-flexbox .persona-info {
+                width:auto !important;
+                height:auto !important;
+            }
+            
+            /* Tab Component */
 
             .no-flexbox .tab-box {
                 width:100%;
@@ -613,6 +665,8 @@
             .flexbox .tab-box {
 
             }
+
+            /* Form Input Component */
 
             html .form-group .input-text,
             html .form-group .input-dropdown {
