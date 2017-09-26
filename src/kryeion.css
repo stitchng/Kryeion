@@ -213,6 +213,12 @@
               border-spacing: 0;
             }
 
+            td,
+            th {
+              padding: 0;
+              text-align: left;
+            }
+
             nav ul, 
             div ul, 
             aside > ul, 
@@ -264,17 +270,81 @@
                   *vertical-align: middle; 
             }
 
+            textarea { 
+                  overflow: auto; 
+                  vertical-align: top; 
+            }
+
             button, 
             input { 
                   line-height: normal; 
             }
 
-            button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; *overflow: visible; }
-            input[type="checkbox"], input[type="radio"] { box-sizing: border-box; padding: 0; }
-            input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
-            input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
-            button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
-            textarea { overflow: auto; vertical-align: top; }
+            button, 
+            input[type="button"], 
+            input[type="reset"], 
+            input[type="submit"] { 
+                  cursor: pointer; 
+                  -webkit-appearance: button; 
+                  -moz-appearance: button;
+                  appearance: button;
+                  *overflow: visible; 
+            }
+
+            input[type="checkbox"], 
+            input[type="radio"] { 
+                  padding: 0; 
+            }
+
+            input[type="search"] { 
+                  -webkit-appearance: textfield;
+                  -moz-appearance: textfield;
+                  appearance: textfield;
+                   -ms-box-sizing: content-box; 
+                  -moz-box-sizing: content-box; 
+                  -webkit-box-sizing: content-box; 
+                  box-sizing: content-box; 
+            }
+
+            input[type="search"]::-webkit-search-decoration {
+                  -webkit-appearance: none; 
+            }
+
+            button::-moz-focus-inner, 
+            input::-moz-focus-inner { 
+                   border: 0; 
+                   padding: 0; 
+            }
+
+            ::-webkit-input-placeholder, /* Chrome 4+/Safri/Opera 15+ */
+            :-moz-placeholder, /* Firefox 18- */
+            ::-moz-placeholder, /* Firefox 19+ */
+            :-ms-input-placeholder { /* Edge/IE 10+ */
+                color:#e4e4e4;
+            }
+
+            input[type=date]::-webkit-clear-button,
+            input[type=time]::-webkit-inner-spin-button,
+            input[type=number]::-ms-clear-button,
+            input[type=number]::-ms-inner-spin-button,
+            input[type=date]::-webkit-calendar-picker-indicator,
+            input[type=date]::-ms-calendar-picker-indicator {
+                display: none;
+            }
+
+            input[type=number]::-webkit-outer-spin-button,
+            input[type=number]::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+
+            input[type=number] {
+                -moz-appearance:textfield;
+            }
+
+            input[type=date]::-webkit-datetime-edit {
+                letter-spacing:0;
+            }
 
             /* ===== MAIN CSS ===== */
 
@@ -294,11 +364,11 @@
                       box-sizing: inherit;
             }
 
-            .full-text-size{
+            html.full-text-size {
                 font-size:100%; 
             }
  
-            .full-height, .full-height body {
+            html.full-height, html.full-height body {
                 position:relative !important;
                 overflow: auto;
                 height: 100%;
@@ -509,13 +579,13 @@
                     user-select: none;
             }
 
-            .no-flexbox .persona-element,
-            .no-flexbox .inputmedia-element {
+            .no-flexbox .persona-box,
+            .no-flexbox .inputmedia-box {
                  width:auto !important;
             }
             
-            .flexbox .persona-element,
-            .flexbox .inputmedia-element {
+            .flexbox .persona-box,
+            .flexbox .inputmedia-box {
                   
             }
             
@@ -529,6 +599,8 @@
                 display:block;
                 visibility:hidden;
                 opacity:0;
+                -ms-filter:"alpha(opacity=0)";
+                filter:alpha(opacity=0);
             }
 
             .no-flexbox .tab-box {
