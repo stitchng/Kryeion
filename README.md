@@ -71,4 +71,4 @@ MIT
 
 ## Contributing
 
-We would love to have you contribute to this project. This project was created by **CoolCodes** <img src="./logo-coolcodes.png">
+We would love to have you contribute to this project. This project is backed by **CoolCodes** <img src="./logo-coolcodes.png">
