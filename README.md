@@ -12,43 +12,54 @@ Kryeion makes it really easy to create custom widgets and simple no-tween effect
 <html class="full-height">
     <head>
         <link rel="stylesheet" media="screen" href="path/to/kryeion.css">
-    
+       <!-- The 2 scripts below HAVE TO be included for kryeion to work -->
         <script src="path/to/browsengine.js" type="text/javascript"></script>
         <script src="path/to/modernizr.js" type="text/javascript"></script>
     </head>
     <body>
     
+     <div class="kr-boxing">
+       <div class="kr-row">
+        <div class="kr-column column-four">
         <section class="card">
             <h1 class="heading-box text-centered">
                 <small class="fancyheading-pane">
                         <strong class="fancyheading-pane-placeholder">New Intakes</strong> 
                 </small>
             </h1>
-            <ul>
-                <li>
-                    <div class="persona-box">
-                        <span class="persona-avatar-box">
-                            <a href="/" class="persona-avatar"><img src="" alt="Avatar"></a> 
-                        </span>
-                        <div class="persona-info">
-                            <h3>Henry Backer</h3>
-                            <p>I know about what to do and what not.</p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="persona-box">
-                        <span class="persona-avatar-box">
-                            <a href="/" class="persona-avatar"><img src="" alt="Avatar"></a> 
-                        </span>
-                        <div class="persona-info">
-                            <h3>Susan Flowy</h3>
-                            <p>I don't know what i think i should do.</p>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </section>
+            <div class="listings">
+                    <ul>
+                        <li>
+                            <div class="persona-box">
+                                <span class="persona-avatar-box">
+                                    <a href="/" class="persona-avatar"><img src="" alt="Avatar"></a> 
+                                </span>
+                                <div class="persona-info">
+                                    <h3>Henry Backer</h3>
+                                    <p>I know about what to do and what not.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="persona-box">
+                                <span class="persona-avatar-box">
+                                    <a href="/" class="persona-avatar"><img src="" alt="Avatar"></a> 
+                                </span>
+                                <div class="persona-info">
+                                    <h3>Susan Flowy</h3>
+                                    <p>I don't know what i think i should do.</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+           </div>
+           <div class="kr-column column-eight"> 
+                <p>Hello, Nice to meet you!</p>
+            </div>
+        </div>
+    </div> 
     
     </body>
 </html>
