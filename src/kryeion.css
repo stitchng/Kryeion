@@ -636,6 +636,9 @@
                  visibility:hidden;
             }
             
+            .flexbox .kr-row,
+            .flexboxlegacy .kr-row,
+            .flexboxtweener .kr-row,
             .flexbox .persona-box,
             .flexbox .mixedinput-box,
             .flexboxlegacy .persona-box,
@@ -657,11 +660,29 @@
                   display: -moz-flex;
                   display: -o-flex;
                   display: flex;
+             }
+
+            .flexbox .persona-box,
+            .flexbox .mixedinput-box,
+            .flexboxlegacy .persona-box,
+            .flexboxlegacy .mixedinput-box,
+            .flexboxtweener .persona-box,
+            .flexboxtweener .mixedinput-box,
+            .flexbox .tab-box,
+            .flexboxlegacy .tab-box,
+            .flexboxtweener .tab-box,
+            .flexbox .tab-box .tab,
+            .flexboxlegacy .tab-box .tab,
+            .flexboxtweener .tab-box .tab {
+                  -ms-flex-wrap:nowrap;      
                   -moz-flex-wrap:nowrap;
                   -webkit-flex-wrap:nowrap;
                   flex-wrap:nowrap;
             }
 
+            .flexbox .kr-row,
+            .flexboxlegacy .kr-row,
+            .flexboxtweener .kr-row,
             .flexbox .persona-box,
             .flexbox .mixedinput-box,
             .flexboxlegacy .persona-box,
@@ -712,6 +733,40 @@
                   align-items:flex-start;
             }
 
+            .flexbox .tab-box.anchor-middle,
+            .flexboxlegacy .tab-box.anchor-middle,
+            .flexboxtweener .tab-box.anchor-middle {
+                  -moz-justify-content:center;
+                  -webkit-justify-content:center;
+                  justify-content:center;
+                  -moz-align-items:center;
+                  -webkit-align-items:center;	
+                  align-items:center;
+            }
+
+            .flexbox .tab-box.anchor-right,
+            .flexboxlegacy .tab-box.anchor-right,
+            .flexboxtweener .tab-box.anchor-right {
+                  -moz-justify-content:flex-end;
+                  -webkit-justify-content:flex-end;
+                  justify-content:flex-end;
+                  -moz-align-items:flex-end;
+                  -webkit-align-items:flex-end;	
+                  align-items:flex-start;
+            }
+
+            .no-flexbox .tab-box.anchor-left {
+                  text-align:left;
+            }
+
+            .no-flexbox .tab-box.anchor-middle {
+                  text-align:center;
+            }
+
+            .no-flexbox .tab-box.anchor-right {
+                  text-align:right;
+            }
+
             .flexbox .persona-avatar-box {
                 flex:initial;
             }
@@ -760,7 +815,7 @@
                 height:auto !important;
             }
 
-            .tab-box .tab{
+            .no-flexbox .tab-box .tab {
                 height:auto !important;
                 text-align:center !important;
                 line-height:normal;
@@ -795,8 +850,8 @@
 
             /* Form Input Component */
 
-            html .form-group .input-text,
-            html .form-group .input-dropdown {
+            .form-group .input-text,
+            .form-group .input-dropdown {
                 position: relative;
                 padding:0 3px 0 5px;
                 border:1px solid #999999;
@@ -808,7 +863,7 @@
                 behavior:url('https://cdn.jsdelivr.net/css3pie/2.0b1/PIE.htc');
             }
 
-            html .form-group .input-dropdown .input-dropdown-addon {
+            .form-group .input-dropdown .input-dropdown-addon {
                 background-color: transparent;
                 display:block;
                 position: absolute;
@@ -818,8 +873,8 @@
                 right:5px;
             }
 
-            html .form-group .input-text .form-control,
-            html .form-group .input-dropdown .form-control {
+            .form-group .input-text .form-control,
+            .form-group .input-dropdown .form-control {
                 border:none;
                 background-color:transparent;
                 box-shadow:none;
@@ -830,7 +885,7 @@
                 padding:7px 0 7px 0;
             }
 
-            html .form-group .input-dropdown select.form-control {
+            .form-group .input-dropdown select.form-control {
                 -moz-appearance:none;
                 -webkit-appearance:none;
                 appearance:none;
@@ -838,19 +893,19 @@
                 text-overflow: '';
             }
 
-            html .form-group .input-dropdown select.form-control:-ms-expand {
+            .form-group .input-dropdown select.form-control:-ms-expand {
                 display: none;
             }
 
-            html .form-group .chevron{
+            .form-group .chevron{
                 margin:0;
                 padding: 0 20px;
                 display: block;
                 height:40px;
             }
 
-            html .form-group  .chevron:before,
-            html .form-group  .chevron:after{
+            .form-group  .chevron:before,
+            .form-group  .chevron:after{
                 position: absolute;
                 display:block;
                 content: "";
@@ -858,12 +913,12 @@
                 z-index:400;
             }
 
-            html .form-group .chevron:before{
+            .form-group .chevron:before{
                 top:0;
                 border-top-color: #999999; /* chevron color */
             }
 
-            html .form-group .chevron:after{
+            .form-group .chevron:after{
                 top:-2px;
                 border-top-color:#ffffff; /* match background color*/
             }
@@ -1168,6 +1223,7 @@
 
             .add-shadow .card {
                  position:relative;
+                 background-color:#ffffff;
             }
 
             .fancyheading-pane {
@@ -1261,27 +1317,53 @@
                 transform: scale(1, -1);
                 -pie-png-fix:true;
               }
-              
-              [aria-view-mode="desktop"] .kr-row{
-                width:auto !important;
-                margin-top:0;
-                margin-bottom:0;
-              }
 
               .no-flexbox .kr-row {
+                  width:auto !important;
+              }
+
+              /* Layout and Grid */
+              
+              [aria-view-mode="desktop"] .kr-row,
+              [aria-view-mode="tablet"] .kr-row {
+                 margin-left:-20px;
+                 margin-right:-20px;
+              }
+
+              [aria-view-mode="mobile"] .kr-row{
+                  margin-left: -10px;
+                  margin-right: -10px;
+              }
+
+              .flexbox .kr-row,
+              .flexboxlegacy .kr-row,
+              .flexboxtweener .kr-row {
+                   -webkit-box-flex:0;
+                   box-flex:0;
+                   -webkit-flex:0 1 auto;
+                   -moz-flex:0 1 auto;
+                   -ms-flex:0 1 auto;
+                   flex:0 1 auto;
+                   -ms-flex-wrap:wrap;
+                   -moz-flex-wrap:wrap;
+                   -webkit-flex-wrap:wrap;
+                   flex-wrap:wrap;
+              }
+
+              .kr-boxing {
+                  margin-left:auto;
+                  margin-right:auto;
+              }
+
+              [aria-view-mode="desktop"] .kr-boxing,
+              [aria-view-mode="tablet"] .kr-boxing {
                   padding-left:20px;
                   padding-right:20px;
               }
 
-              .flexbox .kr-row {
-
-              }
-
-              [aria-view-mode="mobile"] .kr-row{
-                  margin-left: -5px;
-                  margin-right: -5px;
-                  margin-top:2px;
-                  margin-bottom:2px;
+              [aria-view-mode="mobile"] .kr-boxing {
+                  padding-left:10px;
+                  padding-right:10px;
               }
               
               .kr-row-fixed {
@@ -1308,7 +1390,7 @@
               }
               
               .kr-row + .kr-row{
-                 margin-top:10px;
+                 margin-top:15px;
               }
               
               /* Float Grid - */
