@@ -478,7 +478,7 @@
             } 
 
             .text-centered,
-            .no-flexbox .tab-box.anchor-center {
+            .no-flexbox .tab-box.anchor-middle {
                 text-align:center;
             } 
 
@@ -579,6 +579,10 @@
             }
 
             /* CSS Tricks - [adapted from Chris Coyier]  https://css-tricks.com/almanac/properties/b/box-shadow/ */
+
+            .full-width {
+                       width:100%;            
+            }
 
             .add-shadow {
                         margin: 40px;
@@ -790,18 +794,6 @@
                   align-items:flex-start;
             }
 
-            .no-flexbox .tab-box.anchor-left {
-                  text-align:left;
-            }
-
-            .no-flexbox .tab-box.anchor-middle {
-                  text-align:center;
-            }
-
-            .no-flexbox .tab-box.anchor-right {
-                  text-align:right;
-            }
-
             .flexbox .persona-avatar-box {
                 -webkit-box-flex:initial;
                 box-flex:initial;
@@ -850,7 +842,7 @@
                 height:auto !important;
             }
 
-            .no-flexbox .tab-box {
+            .tab-box {
                 width:100%;
                 height:auto !important;
                 border-bottom:2px solid #eeeeee;
@@ -858,7 +850,6 @@
 
             .no-flexbox .tab-box .tab {
                 height:auto !important;
-                text-align:center !important;
                 line-height:normal;
                 vertical-align:middle;
             }
@@ -887,17 +878,36 @@
                 flex: 1 auto;
             }
 
-            .no-flexbox .tab-box .tab-item {
-                width:auto !important;
+            .tab-box {
+                margin-bottom:20px;
+            }
+
+            .tab-box .tab {
                 margin-bottom:-2px;
             }
 
-            .tab-box .tab-item > .tab-item-button {
+            .tab > .tab-item + .tab > .tab-item {
+                margin-left:10px; 
+            }
+
+            .tab-box .tab .tab-item > .tab-item-button {
                 height:40px;
                 line-height:40px;
                 text-align:center;
+                display:block;
+                padding:0 8px;
                 color:#888888;
-                border-bottom:2px solid #888888;
+                border-bottom:2px solid transparent;
+            }
+
+            .tab-box .tab .tab-item > .tab-item-button:hover {
+                color:#222222;
+            }
+
+            .tab-box .tab .tab-item > .tab-item-button.active-item,
+            .tab-box .tab .tab-item > .tab-item-button:focus,
+            .tab-box .tab .tab-item > .tab-item-button:active {
+                border-color:#888888;
             }
 
             /* Form Input Component */
