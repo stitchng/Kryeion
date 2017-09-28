@@ -938,8 +938,8 @@
             }
 
             [unclickable],
-            .form-group  .chevron-btn{
-                pointer-events:none; /* disable clicking on DOM element */
+            .form-group .chevron-btn {
+                pointer-events:none; /* disable clicking on DOM element OR pass click to DOM element below in the stacking context */
             }
 
             input[readonly],
@@ -1588,5 +1588,6 @@
 
               [class*="kr-column"] > [class*="kr-row"]:first-child,
               [class*="kr-column"] > [class*="kr-row"]:last-child {
-                  
+                  margin-top:10px;
+                  margin-bottom:10px;
               }
