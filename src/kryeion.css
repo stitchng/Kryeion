@@ -467,6 +467,11 @@
                 border:0;
             }
 
+            .text-truncate {
+                text-overflow:ellipsis !important;
+                white-space:nowrap !important;
+            }
+
             .text-leftmost,
             .no-flexbox .tab-box.anchor-left {
                 text-align:left;
@@ -481,6 +486,14 @@
             .no-flexbox .tab-box.anchor-right {
                 text-align:right;
             } 
+
+            push-to-left {
+                float:left !important;
+            }
+
+            push-to-right {
+                float:right !important;
+            }
 
             .relative {
                 position:relative;
