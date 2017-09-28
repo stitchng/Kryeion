@@ -1004,24 +1004,24 @@
             .borderradius .capsule,
             .borderradius .IE9 .capsule,
             .no-borderradius .yes-old-ms .capsule{
-                border-radius:3px;
+                border-radius: 500px;
             }
 
             .borderradius .yes-moz .capsule{
-                -moz-border-radius:3px;
+                -moz-border-radius: 500px;
             }
 
             .borderradius .yes-webkit .capsule{
-                -webkit-border-radius:3px;
+                -webkit-border-radius: 500px;
             }
 
             .borderradius .yes-opera .capsule{
-                -o-border-radius:3px;
-                border-radius:3px;
+                -o-border-radius: 500px;
+                border-radius: 500px;
             }
 
             .borderradius .yes-khtml .capsule{ /* W3C Konqueror */
-               -khtml-border-radius:3px;
+               -khtml-border-radius: 500px;
             }
 
             .borderradius .tablet,
