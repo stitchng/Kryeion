@@ -1591,7 +1591,7 @@
                     max-width:91.66666667%;
                  }
 
-                 .flexbox .kr-row .kr-column.column-tweleve {
+                 .flexbox .kr-row .kr-column.column-twelve {
                      -ms-flex-preferred-size:100%;
                      flex-basis:100%;
                      max-width:100%;
@@ -1611,7 +1611,7 @@
               [aria-view-mode="mobile"] .kr-row .kr-column.column-nine,
               [aria-view-mode="mobile"] .kr-row .kr-column.column-ten,
               [aria-view-mode="mobile"] .kr-row .kr-column.column-eleven,
-              .kr-row .twelve {
+              .no-flexbox .kr-row .twelve {
                   width:100%;
                   float:none;
               }
@@ -1628,7 +1628,7 @@
                   padding:10px 0;
               }
 
-              .IE7 .kr-column {	
+              .no-flexbox .IE7 .kr-column {	
                  *behavior: url('https://raw.github.com/Schepp/box-sizing-polyfill/master/boxsizing.htc');
               }
 
