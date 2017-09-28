@@ -629,15 +629,18 @@
                     line-height:1.4;
                     text-align:center;
                     color:#ffffff;
+                    display:inline-block;
                     border-color:transparent;
             }
 
             .button.button-basic {
                  background-color:#b7b7b7;
+                 padding:7px 13px;
             }
 
             .button.button-basic:hover {
                  background-color:#d5d5d5;
+                 padding:7px 13px;
             }
 
             /* 
@@ -970,6 +973,10 @@
             .form-group .chevron:after{
                 top:-2px;
                 border-top-color:#ffffff; /* match background color*/
+            }
+
+            .form-group + .form-group {
+                margin-top:15px;
             }
 
             [contenteditable] {
