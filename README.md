@@ -32,7 +32,7 @@ Kryeion makes it really easy to create custom widgets and simple no-tween effect
                         <li>
                             <div class="persona-box">
                                 <span class="persona-avatar-box">
-                                    <a href="/" class="persona-avatar"><img src="" alt="Avatar"></a> 
+                                    <a href="/" class="persona-avatar"><img src="" alt="Avatar" class="flexible"></a> 
                                 </span>
                                 <div class="persona-info">
                                     <h3>Henry Backer</h3>
@@ -43,7 +43,7 @@ Kryeion makes it really easy to create custom widgets and simple no-tween effect
                         <li>
                             <div class="persona-box">
                                 <span class="persona-avatar-box">
-                                    <a href="/" class="persona-avatar"><img src="" alt="Avatar"></a> 
+                                    <a href="/" class="persona-avatar"><img src="" alt="Avatar" class="flexible"></a> 
                                 </span>
                                 <div class="persona-info">
                                     <h3>Susan Flowy</h3>
@@ -56,7 +56,7 @@ Kryeion makes it really easy to create custom widgets and simple no-tween effect
             </section>
            </div>
            <div class="kr-column column-eight"> 
-                <nav class="tab-box">
+                <nav class="tab-box anchor-middle">
                     <ul class="tab">
                         <li class="tab-item">
                             <a href="javascript::void(0);" class="tab-item-button">Up Votes</a>
