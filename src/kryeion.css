@@ -1,5 +1,5 @@
 /**!
- * @version: v0.1.2
+ * @version: v0.1.3
  * @name: Kryeion (https://github.com/isocroft/Kryeion)
  * @copyright: Copyright (c) 2017, StitchNG, Oparand Inc.
  * @license: MIT (https://github.com/iscroft/Kryeion/blob/master/LICENSE)
@@ -1221,10 +1221,16 @@
                  width:auto !important;
             }
 
+            .tile {
+
+            }
+
             .add-shadow .card {
                  position:relative;
                  background-color:#ffffff;
             }
+
+            /* Stylish Heading */
 
             .fancyheading-pane {
                 color: #B9BCC0;
@@ -1262,6 +1268,8 @@
                 color:#4d4d4d;
                 background-color:transparent;
             }
+
+            /* Quick Effects */
 
             .rotate-90 {
                 filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
