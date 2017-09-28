@@ -66,6 +66,11 @@
             }
 
             /** Links **/
+            
+            a[href="#"],
+            a[href="javascript:void(0);"] {
+                 text-decoration:none;
+            }
 
             a:focus { 
                 outline: thin dotted; 
@@ -978,6 +983,29 @@
                 -khtml-border-radius:50%;
             }
 
+            .borderradius .capsule,
+            .borderradius .IE9 .capsule,
+            .no-borderradius .yes-old-ms .capsule{
+                border-radius:3px;
+            }
+
+            .borderradius .yes-moz .capsule{
+                -moz-border-radius:3px;
+            }
+
+            .borderradius .yes-webkit .capsule{
+                -webkit-border-radius:3px;
+            }
+
+            .borderradius .yes-opera .capsule{
+                -o-border-radius:3px;
+                border-radius:3px;
+            }
+
+            .borderradius .yes-khtml .capsule{ /* W3C Konqueror */
+               -khtml-border-radius:3px;
+            }
+
             .borderradius .tablet,
             .borderradius .IE9 .tablet,
             .no-borderradius .yes-old-ms .tablet{
@@ -1144,6 +1172,7 @@
                 web project.
              */
 
+            .no-borderradius .yes-old-ms .capsule,
             .no-borderradius .yes-old-ms .tablet,
             .no-borderradius .yes-old-ms  .pill,
             .no-borderradius .yes-old-ms .ultrapill,
