@@ -614,14 +614,7 @@
                 filter:alpha(opacity=0);
             }
             
-            /* 
-                CSS button enhacements - majorly for <a> <button> <span> 
-            */
-    
-            [aria-touch-capable="true"] .button {
-                 -ms-touch-action: none;
-                      touch-action: none;
-            }
+            /* Buttons */
 
             .button { 
                 white-space: nowrap;
@@ -633,6 +626,27 @@
                 -moz-user-select: none;
                 -ms-user-select: none;
                     user-select: none;
+                    line-height:1.4;
+                    text-align:center;
+                    color:#ffffff;
+                    border-color:transparent;
+            }
+
+            .button.button-basic {
+                 background-color:#b7b7b7;
+            }
+
+            .button.button-basic:hover {
+                 background-color:#d5d5d5;
+            }
+
+            /* 
+                CSS button enhacements - majorly for <a> <button> <span> 
+            */
+    
+            [aria-touch-capable="true"] .button {
+                 -ms-touch-action: none;
+                      touch-action: none;
             }
 
             /* Persona Media Object, MixedInput Media Object, Tabs Object  */
