@@ -840,6 +840,11 @@
                 vertical-align:middle;
             }
 
+            .block-box {
+                dsiplay:block !important;
+            }
+
+            .inlineblock-box,
             .no-flexbox .tab-box .tab,
             .no-flexbox .tab-box .tab-item {
                  display:inline-block;
