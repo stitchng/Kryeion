@@ -786,6 +786,11 @@
             }
 
             .flexbox .persona-avatar-box {
+                -webkit-box-flex:initial;
+                box-flex:initial;
+                -webkit-flex:initial;
+                -moz-flex:initial;
+                -ms-flex:initial;
                 flex:initial;
             }
 
@@ -831,6 +836,7 @@
             .no-flexbox .tab-box {
                 width:100%;
                 height:auto !important;
+                border-bottom:2px solid #eeeeee;
             }
 
             .no-flexbox .tab-box .tab {
@@ -849,7 +855,7 @@
             .no-flexbox .tab-box .tab-item {
                  display:inline-block;
                  display:-moz-inline-box; /* Support for old Gecko browsers e.g. Camino, Firefox */
-                 *display:inline;
+                 *display:inline; /* Make `display:inline-block;` work in IE 7 - Star hack */
                  *zoom:1;
             }
 
@@ -865,10 +871,16 @@
             }
 
             .no-flexbox .tab-box .tab-item {
-                /*padding:15px 10px;*/
                 width:auto !important;
+                margin-bottom:-2px;
+            }
+
+            .tab-box .tab-item > .tab-item-button {
                 height:40px;
                 line-height:40px;
+                text-align:center;
+                color:#888888;
+                border-bottom:2px solid #888888;
             }
 
             /* Form Input Component */
