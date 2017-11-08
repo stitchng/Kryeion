@@ -691,7 +691,7 @@
 
             /* Icons */
 
-            i.k-icon {
+            i.kr-icon {
                         display:inline-block;
                         padding:8px;
                         text-align:center;
@@ -701,7 +701,7 @@
             }
 
             i:before,
-            a.k-icon:before {
+            a.kr-icon:before {
                         display:inline !important;
                         font-weight:bold;
                         white-space:nowrap;
@@ -711,7 +711,7 @@
 
             i.message:before,
             i.mail:before,
-            a.k-icon[href^="mailto:"]:before {
+            a.kr-icon[href^="mailto:"]:before {
                         content:"\2709";
                         font-size:17px;;
             }
@@ -859,6 +859,7 @@
 
             blockquote[enhanced] {
                         font-size:29px;
+                        text-transform:capitalize;
             }
 
             blockquote[enhanced]:before { 
@@ -1966,8 +1967,23 @@
                   margin-bottom:10px;
               }
 
-              @media (max-width:640px) {
+              @media (max-width:768px) {
                     .no-flexbox .kr-column {
                          float:none;
+                    }
+                
+                    .flexbox .kr-row {
+                        box-orient: vertical;
+                        -webkit-box-orient:vertical;
+                        -moz-box-orient:vertical;
+                        -ms-box-orient:vertical;
+                        -moz-flex-direction:column;
+                        -ms-flex-direction:column;
+                        -webkit-flex-direction:column;
+                        flex-direction:column;
+                    }
+                
+                    .flexbox .kr-row + .kr-row {
+                        margin-top:20px;
                     }
               }
