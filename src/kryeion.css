@@ -1,5 +1,9 @@
 @charset "utf-8";
 
+@-ms-viewport {
+    width:device-width;
+}
+
 /**!
  * @version: v0.1.4
  * @name: Kryeion (https://github.com/isocroft/Kryeion)
@@ -592,11 +596,7 @@
                 right:0;
             }
 
-            /* CSS Tricks - [adapted from Chris Coyier]  https://css-tricks.com/almanac/properties/b/box-shadow/ */
-
-            @-ms-viewport {
-                width:device-width;
-            }
+            
 
             .full-width {
                         max-width:100%;
@@ -633,7 +633,7 @@
                         margin-right:0;
             }
 
-            
+            /* CSS Tricks - [adapted from Chris Coyier]  https://css-tricks.com/almanac/properties/b/box-shadow/ */
 
             .add-shadow {
                         margin: 40px;
@@ -668,6 +668,201 @@
                 -ms-filter:"alpha(opacity=0)";
                 filter:alpha(opacity=0);
             }
+
+            /* Icons */
+
+            i.k-icon {
+                        display:inline-block;
+                        padding:8px;
+                        text-align:center;
+                        line-hieght:16px;
+                        width:23px;
+                        box-sizing:content-box !important;
+            }
+
+            i:before,
+            a.k-icon:before {
+                        display:inline !important;
+                        font-weight:bold;
+                        white-space:nowrap;
+                        color:#999;
+                        font-style:normal;
+            }
+
+            i.message:before,
+            i.mail:before,
+            a.k-icon[href^="mailto:"]:before {
+                        content:"\2709";
+                        font-size:17px;;
+            }
+
+            i.warning:before,
+            i.hazard:before {
+                        content:"\26A0";
+                        font-size:15px;
+            }
+
+            i.menu-separator:before {
+                        content:"\23D0";
+                        font-size:15px;
+            }
+
+            i.caret:before {
+                        content:"\25BE";
+                        font-size:17px;
+            }
+
+            i.sun:before {
+                        content:"\263C";
+                        font-size:17px;
+            }
+
+            i.cloud:before {
+                        content:"\2601";
+                        font-size:17px;
+            }
+
+            i.sun-and-cloud:before {
+                        content:"\26C5";
+                        font-size:17px;
+            }
+
+            i.star:before {
+                        content:"\2606";
+                        font-size:17px;
+            }
+
+            i.star-filled:before {
+                        content:"\2605";
+                        font-size:17px;
+            }
+
+            i.equals:before {
+                        content:"\2E40";
+                        font-size:17px;
+            }
+
+            i.machine:before {
+                        content:"\2FA2";
+                        font-size:17px;
+            }
+
+            i.enter-key:before {
+                        content:"\2BA0";
+                        font-size:17px;
+            }
+
+            i.square:before {
+                        content:"\25FB";
+                        font-size:17px;
+            }
+
+            i.square-filled:before {
+                        content:"\25FC";
+                        font-size:17px;
+            }
+
+            i.tent:before {
+                        content:"\26FA";
+                        font-size:17px;
+            }
+
+            i.copyright:before {
+                        content:"\24D2";
+                        font-size:17px;
+            }
+
+            i.earthing:before {
+                        content:"\23DA";
+                        font-size:17px;
+            }
+
+            i.three-o:before,
+            ol[enhanced] li.three:before {
+                        content:"\24F7";
+                        font-size:17px;
+            }
+
+            i.four-o:before,
+            ol[enhanced] li.four:before {
+                        content:"\24F8";
+                        font-size:17px;
+            }
+
+            i.five-o:before,
+            ol[enhanced] li.five:before {
+                        content:"\24F9";
+                        font-size:17px;
+            }
+
+            i.six-o:before,
+            ol[enhanced] li.six:before {
+                        content:"\24FA";
+                        font-size:17px;
+            }
+
+            i.seven-o:before,
+            ol[enhanced] li.seven:before {
+                        content:"\24FB";
+                        font-size:17px;
+            }
+
+            i.eight-o:before,
+            ol[enhanced] li.eight:before {
+                        content:"\24FC";
+                        font-size:17px;
+            }
+
+            i.nine-o:before,
+            ol[enhanced] li.nine:before {
+                        content:"\24FD";
+                        font-size:17px;
+            }
+
+            i.square-filled:before {
+                        content:"\25FC";
+                        font-size:17px;
+            }
+
+            i.ham-burger:before,
+            i.mobile-menu:before {
+                        content:"\2630";
+                        font-size:17px;
+            }
+
+            i.arrow-down:before {
+                        content:"\2193";
+                        font-size:17px;
+            }
+
+            /* Quotes / Highlighted Text */
+
+            blockquote[enhanced] {
+                        font-size:29px;
+            }
+
+            blockquote[enhanced]:before { 
+                        content: "\201C";
+                        color:#444; 
+                        display:inline-block !important;
+                        font-size:92px;
+                        position:relative;
+                        z-index:5;
+                        margin-right:-11px;
+                        top:21px;
+            }
+
+            q[enhanced]:before { 
+                        content: "\275D";
+                        color:#444;
+                        display:inline !important; 
+            }
+
+            q[enhanced]:after { 	
+                        content: "\275E"; 
+                        color:#444;
+                        display:inline !important; 
+            }
             
             /* Buttons */
 
@@ -696,6 +891,40 @@
             .button.button-basic:hover {
                  background-color:#333333;
                  padding:7px 13px;
+            }
+
+            .button.basic-inverted {
+                 border:1px solid #b7b7b7;
+                 background-color:transparent !important;
+                 color:#b7b7b7;
+            }
+
+            .button.basic-inverted:hover {
+                 border:1px solid #333333;
+                 background-color:transparent !important;
+                 color:#333333;
+            }
+
+            .button.button-kinky {
+                 background-color:#b2b2ff;
+                 padding:7px 13px;
+            }
+
+            .button.button-kinky:hover {
+                 background-color:#6666ff;
+                 padding:7px 13px;
+            }
+
+            .button.kinky-inverted {
+                 border:1px solid #b2b2ff;
+                 background-color:transparent !important;
+                 color:#b2b2ff;
+            }
+
+            .button.kinky-inverted:hover {
+                 border:1px solid #6666ff;
+                 background-color:transparent !important;
+                 color:#6666ff;
             }
 
             /* 
