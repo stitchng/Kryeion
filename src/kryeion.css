@@ -1,3 +1,5 @@
+@charset "utf-8";
+
 /**!
  * @version: v0.1.4
  * @name: Kryeion (https://github.com/isocroft/Kryeion)
@@ -9,6 +11,17 @@
  * @credits: https://github.com/kristoferjoseph/flexboxgrid/ (https://twitter.com/dam - @dam)
  */
 
+            /* ==== ==== */
+
+            @supports (height: 100vh) {
+                        .expand-fill-vertical {
+                                    height: 100vh;           
+                        }
+            }
+
+            .expand-fill-vertical {
+                         height:100%;
+            }
 
             /* ===== CUSTOM RESET CSS  ===== */
 
@@ -375,7 +388,8 @@
                 font-size:100%; 
             }
  
-            html.full-height, html.full-height body {
+            html.full-height, 
+            html.full-height body {
                 position:relative !important;
                 overflow: auto;
                 height: 100%;
