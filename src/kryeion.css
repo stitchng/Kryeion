@@ -599,8 +599,41 @@
             }
 
             .full-width {
-                       width:100%;            
+                        max-width:100%;
+                        *width:expression(this.clientWidth > this.parentNode.clientWidth ? this.parentNode.clientWidth + "px" : this.clientWidth + "px");
+                        margin-left:0;
+                        margin-right:0;
             }
+
+            .gridded-container {
+                        margin-left:auto;
+                        margin-right:auto;
+                        position: relative;
+            }
+
+            [aria-view-mode="tv"] .gridded-container {
+                        max-width:1180px;
+                        *width:expression(document.body.clientWidth > 1179 ? "1180px" : "auto" ); 
+            }
+
+            [aria-view-mode="desktop"] .gridded-container {
+                        max-width:980px;
+                        *width:expression(document.body.clientWidth > 979 ? "980px" : "auto" ); 
+            }
+
+            [aria-view-mode="tablet"] .gridded-container {
+                        max-width:690px;
+                        *width:expression(document.body.clientWidth > 689 ? "690px" : "auto" );
+            }
+
+            [aria-view-mode="mobile"] .gridded-container {
+                        max-width:100%;
+                        *width:expression(this.clientWidth > this.parentNode.clientWidth ? this.parentNode.clientWidth + "px" : this.clientWidth + "px");
+                        margin-left:0;
+                        margin-right:0;
+            }
+
+            
 
             .add-shadow {
                         margin: 40px;
