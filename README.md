@@ -21,14 +21,15 @@ Kryeion makes it really easy to create custom widgets and simple no-tween effect
      <div class="kr-boxing">
        <div class="kr-row">
         <div class="kr-column column-four">
-        <section class="card add-shadow">
+        <article class="add-shadow">
+        <section class="tile">
             <h1 class="heading-box text-centered">
                 <small class="fancyheading-pane">
                         <strong class="fancyheading-pane-placeholder">New Intakes</strong> 
                 </small>
             </h1>
             <div class="listings">
-                    <ul>
+                    <ul class="persona-element">
                         <li>
                             <div class="persona-box">
                                 <span class="persona-avatar-box">
@@ -52,8 +53,78 @@ Kryeion makes it really easy to create custom widgets and simple no-tween effect
                             </div>
                         </li>
                     </ul>
-                </div>
+ 
+                    <div class="table">
+                            <p class="table-sidetext-box">
+                                 <span class="table-side-text">internals</span>
+                            </p>
+                            <table class="basic-grid" summary="This is a table of costs and balances">
+                                   <caption>Figure 1.0</caption>
+                                   <thead>
+                                         <tr>
+                                            <th>S/N</th>
+                                         </tr>
+                                   </thead>
+                                   <tbody>
+                                          <tr>
+                                              <td>1</td>
+                                         </tr>
+                                   </tbody>
+                            </table>
+                     </div>
+
+                    <div class="card">
+                             <div class="card-figure">
+                                  <figure class="card-figure-content" data-aspect-ratio="4by3">
+                                      <img src="http://via.placeholder.com/1250x1050" alt="">
+                                  </figure>
+                             </div>
+                             <div class="card-descripton">
+                                 <div class="card-content">
+                                    <div class="persona-box">
+                                         <span class="persona-avatar-box">
+                                             <a href="/" class="persona-avatar"><img src="" alt="Avatar" class="flexible"></a> 
+                                         </span>
+                                        <div class="persona-info">
+                                            <h3>Susan Flowy</h3>
+                                            <p>I don't know what i think i should do.</p>
+                                        </div>
+                                    </div>
+                                  </div>
+                             </div>
+                        </div> 
+                   </div>
+ 
+ 
+                    <nav class="navigation">
+                          <ul class="nav-menu">
+                                 <li class="nav-menu-item"><a href="javascript:void(0);" class="nav-menu-item-button"></a></li>
+                          </ul>
+                   </nav>
+
+                   <div class="button-pack">
+                        <section class="button-sub-pack spaced">
+                              <a href="javascript:void(0);" class="button kr-gradiented">
+                                  Dropping
+                              </a>
+                              <div class="button-dropdown">
+                                   <ul class="button-dropdown-menu">
+                                      <li><a href="#">Item 1</a></li>
+                                      <li><a href="#">Item 2</a></li>
+                                   </ul>
+                              </div>
+                         </section>
+                         <section class="button-sub-group">
+                              <button class="button kr-gradiented">
+                                  All Notifications
+                              </button>
+                              <div class="button-dropdown">
+                                   <ul class="button-dropdown-menu" data-empty-text="No Notifications!"><!-- List is Empty --></ul>
+                              </div>
+                         </section>
+                   </div>
             </section>
+           </article>
            </div>
            <div class="kr-column column-eight"> 
                 <nav class="tab-box anchor-right">
