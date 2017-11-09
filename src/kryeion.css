@@ -1162,6 +1162,10 @@
                   align-items:flex-start;
             }
 
+            .persona-element {
+                margin-bottom:25px;            
+            }
+
             .flexbox .persona-avatar-box {
                 -webkit-box-flex:initial;
                 box-flex:initial;
@@ -1711,6 +1715,12 @@
                    float: left;
                    margin-top: 100%;
             }
+
+            .table-sidetext {
+                  padding:8px;
+                  background-color:#eeeeee;
+                  color:#555555;
+             }
             
             /*
               CSS float clear fix enhancements for IE8
@@ -1734,6 +1744,23 @@
 
             .yes-old-ms .clearfix { 
                 *zoom: 1;
+            }
+
+            /* Navigation */
+
+            .flexbox .nav {
+            
+            }
+
+            .flexbox .nav {
+
+            }
+
+            /* Tables */
+
+            .table {
+                  display:block;
+                  min-height:250px;
             }
 
             /* Tiles and Cards */
