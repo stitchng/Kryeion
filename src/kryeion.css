@@ -873,7 +873,7 @@
                         font-size:17px;
             }
 
-            /* Quotes / Highlighted Text */
+            /* Quotes & Highlighted Text */
 
             blockquote[enhanced] {
                         font-size:29px;
@@ -995,7 +995,9 @@
                  top:100%;
                  left:0;
                  width:auto !important;
+                 min-width:160px;
                  height:350px;
+                 padding:20px 10px;
             }
 
             .button-pack > .button {
@@ -1220,11 +1222,16 @@
                 border-bottom:2px solid #eeeeee;
             }
 
-            .tab-box .tab.tab-pinned tab-item .tab-item-button {
+            .tab-box .tab.tab-pinned tab-item .tab-item-button.active-item {
                  border:none;
                  border-top:1px solid #888888;
                  border-right:1px solid #888888;
                  border-left:1px solid #888888;
+            }
+
+            .tab-box .tab.tab-pinned tab-item .tab-item-button {
+                border:1px solid transparent;
+                color:#888888;
             }
 
             .no-flexbox .tab-box .tab {
@@ -1285,6 +1292,10 @@
 
             .tab-box .tab .tab-item > .tab-item-button:hover {
                 color:#222222;
+            }
+
+            .tab-box .tab.tab-pinned .tab-item > .tab-item-button:hover {
+                background-color:#888888;
             }
 
             .tab-box .tab .tab-item > .tab-item-button.active-item,
@@ -1720,6 +1731,7 @@
                   padding:8px;
                   background-color:#eeeeee;
                   color:#555555;
+                  border-top:2px solid #dcdcdb;
              }
             
             /*
@@ -1744,6 +1756,16 @@
 
             .yes-old-ms .clearfix { 
                 *zoom: 1;
+            }
+
+            /* Panels */
+
+            .flexbox .panel {
+
+            }
+
+            .no-flexbox .panel {
+
             }
 
             /* Navigation */
