@@ -54,11 +54,15 @@ Kryeion makes it really easy to create custom widgets and simple no-tween effect
                         </li>
                     </ul>
  
+                    <div clss="panel">
+ 
+                    </div>
+ 
                     <div class="table">
                             <p class="table-sidetext-box">
                                  <span class="table-side-text">internals</span>
                             </p>
-                            <table class="table-basic-grid" summary="This is a table of costs and balances">
+                            <table class="table-as-grid" summary="This is a table of costs and balances">
                                    <caption>Figure 1.0</caption>
                                    <thead>
                                          <tr>
