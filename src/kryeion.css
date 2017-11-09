@@ -2,7 +2,7 @@
 
 
 /**!
- * @version: v0.1.5
+ * @version: v0.1.6
  * @name: Kryeion (https://github.com/isocroft/Kryeion)
  * @copyright: Copyright (c) 2017, Oparand Ltd.
  * @license: MIT (https://github.com/iscroft/Kryeion/blob/master/LICENSE)
@@ -918,6 +918,10 @@
                     border-color:transparent;
             }
 
+            .button.kr-gradiented {
+                   bckground-image:linear-gradient(#eeeeee, #dddddd);
+            }
+
             .button.button-basic {
                  background-color:#b7b7b7;
                  padding:7px 13px;
@@ -1644,6 +1648,49 @@
                -ms-overflow-y: auto !important; /* IE7,8 */
                -ms-overflow-style: none !important; /* IE10+ */
             }
+
+            /* Many Thanks to @aiboy for This Verticl-Text Snippet */
+            /* see: https://gist.github.com/aiboy/7406727 */
+
+            .table-sidetext-box,
+            .text-rotate-box {
+                        display: inline-block;
+                        overflow: hidden;
+                        width: 1.5em;
+            }
+
+            .table-sidetext,
+            .text-rotate.counter-clockwise-90 {
+                        display: inline-block;
+                        white-space: nowrap;
+                        /* this is for shity "non IE" browsers
+                        that dosn't support writing-mode */
+                        -webkit-transform: translate(1.1em,0) rotate(90deg);
+                        -moz-transform: translate(1.1em,0) rotate(90deg);
+                        -o-transform: translate(1.1em,0) rotate(90deg);
+                        transform: translate(1.1em,0) rotate(90deg);
+                        -webkit-transform-origin: 0 0;
+                        -moz-transform-origin: 0 0;
+                        -o-transform-origin: 0 0;
+                        transform-origin: 0 0;
+
+                        /* IE9+ */
+                        -ms-transform: none;
+                        -ms-transform-origin: none;
+
+                        /* IE8+ */
+                        -ms-writing-mode: tb-rl;
+
+                        /* IE7 and below */
+                        *writing-mode: tb-rl;
+            }
+
+            .table-sidetext:before,
+            .text-rotate.counter-clockwise-90:before {
+                   content: "";
+                   float: left;
+                   margin-top: 100%;
+            }
             
             /*
               CSS float clear fix enhancements for IE8
@@ -1669,17 +1716,17 @@
                 *zoom: 1;
             }
 
-            .card {
+            .tile {
                  padding:50px;
                  margin-bottom:100px;
                  width:auto !important;
             }
 
-            .tile {
-
+            .tile-child {
+                 padding:10px;
             }
 
-            .add-shadow .card {
+            .add-shadow .tile {
                  position:relative;
                  background-color:#ffffff;
             }
@@ -1725,7 +1772,7 @@
 
             /* Quick Effects */
 
-            .rotate-90 {
+            .rotate-box-90 {
                 filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
                 -ms-filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
                 -webkit-transform: rotate(90deg);
@@ -1733,10 +1780,14 @@
                 -ms-transform: rotate(90deg);
                 -o-transform: rotate(90deg);
                 transform: rotate(90deg);
+                -webkit-transform-origin: 50% 50%;
+                -moz-transform-origin: 50% 50%;
+                -ms-transform-origin: 50% 50%;
+                transform-origin: 50% 50%;
                 -pie-png-fix:true;
               }
 
-              .rotate-180 {
+              .rotate-box-180 {
                 filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
                 -ms-filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
                 -webkit-transform: rotate(180deg);
@@ -1744,10 +1795,14 @@
                 -ms-transform: rotate(180deg);
                 -o-transform: rotate(180deg);
                 transform: rotate(180deg);
+                -webkit-transform-origin: 50% 50%;
+                -moz-transform-origin: 50% 50%;
+                -ms-transform-origin: 50% 50%;
+                transform-origin: 50% 50%;
                 -pie-png-fix:true;
               }
 
-              .rotate-270 {
+              .rotate-box-270 {
                 filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
                 -ms-filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
                 -webkit-transform: rotate(270deg);
@@ -1755,6 +1810,10 @@
                 -ms-transform: rotate(270deg);
                 -o-transform: rotate(270deg);
                 transform: rotate(270deg);
+                -webkit-transform-origin: 50% 50%;
+                -moz-transform-origin: 50% 50%;
+                -ms-transform-origin: 50% 50%;
+                transform-origin: 50% 50%;
                 -pie-png-fix:true;
               }
 
