@@ -693,9 +693,9 @@
             }
 
             ul:empty:before {
-                content:attr(data-empty-text);
-                content:"there is nothing to display";
                 content:"";
+                content:"there is nothing to display";
+                content:attr(data-empty-text);
                 display:block;
                 text-align:center;
                 text-transform:capitalize;
