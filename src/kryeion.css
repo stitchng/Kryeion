@@ -976,6 +976,7 @@
             }
 
             .button-pack > .button {
+                 bordr:none;
                  float:left;
             }
 
@@ -1192,6 +1193,13 @@
                 border-bottom:2px solid #eeeeee;
             }
 
+            .tab-box .tab.tab-pinned tab-item .tab-item-button {
+                 border:none;
+                 border-top:1px solid #888888;
+                 border-right:1px solid #888888;
+                 border-left:1px solid #888888;
+            }
+
             .no-flexbox .tab-box .tab {
                 height:auto !important;
                 line-height:normal;
@@ -1228,6 +1236,10 @@
 
             .tab-box .tab {
                 margin-bottom:-2px;
+            }
+
+            .tab-box tab.tab-pinned {
+                margin-bottom:0;
             }
 
             .tab > .tab-item + .tab > .tab-item {
