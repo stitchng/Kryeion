@@ -19,8 +19,10 @@
                    }
             }
 
-            .expand-fill-vertical {
-                   height:100%;
+            @supports not (height:100vh) {
+                   .expand-fill-vertical {
+                          height:100%;
+                   }
             }
 
             /* ===== CUSTOM RESET CSS [GENERICS]  ===== */
@@ -690,8 +692,11 @@
 
             ul:empty:before {
                 content:attr(data-empty-text);
+                content:"there is nothing to display";
+                content:"";
                 display:block;
                 text-align:center;
+                text-transform:capitalize;
                 color:#32e1f0;
                 font-weight:bold;
             }
@@ -1580,7 +1585,7 @@
 
             .no-borderradius .yes-old-ms .capsule,
             .no-borderradius .yes-old-ms .tablet,
-            .no-borderradius .yes-old-ms  .pill,
+            .no-borderradius .yes-old-ms .pill,
             .no-borderradius .yes-old-ms .ultrapill,
             .no-borderradius .yes-old-ms .left-half-pill,
             .no-borderradius .yes-old-ms .left-half-ultrapill,
