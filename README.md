@@ -58,7 +58,7 @@ Kryeion makes it really easy to create custom widgets and simple no-tween effect
                             <p class="table-sidetext-box">
                                  <span class="table-side-text">internals</span>
                             </p>
-                            <table class="basic-grid" summary="This is a table of costs and balances">
+                            <table class="table-basic-grid" summary="This is a table of costs and balances">
                                    <caption>Figure 1.0</caption>
                                    <thead>
                                          <tr>
@@ -96,14 +96,14 @@ Kryeion makes it really easy to create custom widgets and simple no-tween effect
                    </div>
  
  
-                    <nav class="navigation">
+                    <nav class="nav">
                           <ul class="nav-menu">
                                  <li class="nav-menu-item"><a href="javascript:void(0);" class="nav-menu-item-button"></a></li>
                           </ul>
                    </nav>
 
                    <div class="button-pack">
-                        <section class="button-sub-pack spaced">
+                        <section class="button-sub-pack kr-spaced">
                               <a href="javascript:void(0);" class="button kr-gradiented">
                                   Dropping
                               </a>
@@ -114,7 +114,7 @@ Kryeion makes it really easy to create custom widgets and simple no-tween effect
                                    </ul>
                               </div>
                          </section>
-                         <section class="button-sub-group">
+                         <section class="button-sub-pack kr-spaced">
                               <button class="button kr-gradiented">
                                   All Notifications
                               </button>
