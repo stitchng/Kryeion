@@ -480,6 +480,7 @@
                 text-transform: lowercase;
             }
 
+            .table-side-text,
             .text-uppercase {
                 text-transform: uppercase;
             }
@@ -524,12 +525,15 @@
                 float:right !important;
             }
 
-            .relative {
+            .card,
+            .relative,
+            .button-sub-pack[role="dropdwn-box"] {
                 position:relative;
             }
 
+            .absolute,
             .operamini .fixed,
-            .absolute {
+            .button-sub-pack > .button-dropdown {
                 position:absolute;
             }
                         
@@ -973,10 +977,25 @@
             .button-pack {
                  border:1px solid #3e3e3e;
                  background-color:transparent !important;
-                 display:block;
+                 display:inline-block;
+                 *display:inline;
+                 *zoom:1;
                  width:auto !important;
                  line-height:normal;
                  vertical-align:middle;
+            }
+
+            .button-pack > .button-sub-pack {
+                 display:inline-block;
+                 float:left;
+                 height:auto !important;
+            }
+
+            .button-sub-pack > .button-dropdown {
+                 top:100%;
+                 left:0;
+                 width:auto !important;
+                 height:350px;
             }
 
             .button-pack > .button {
@@ -1613,6 +1632,7 @@
                 behavior:url('https://cdn.jsdelivr.net/css3pie/2.0b1/PIE.htc');
             }
 
+            .card-figure .card-figure-content > img,
             .IE8 img.flexible {
                width:auto\9;
                max-width:100%;
@@ -1716,6 +1736,8 @@
                 *zoom: 1;
             }
 
+            /* Tiles and Cards */
+
             .tile {
                  padding:50px;
                  margin-bottom:100px;
@@ -1729,6 +1751,37 @@
             .add-shadow .tile {
                  position:relative;
                  background-color:#ffffff;
+            }
+
+            .card {
+                        max-width:100%;
+                        color:#5b5b5b;
+            }
+
+            .card-figure{
+                        display:block;
+                        padding:7px;
+                        width:auto !important;
+            }
+
+            .card-figure .card-figure-content[data-aspect-ratio="4by3"] {
+                        padding-top:75%;
+            }
+
+            .card-figure .card-figure-content[data-aspect-ratio="16by9"] {
+                        padding-top:60%;
+                        dsiplay:block;
+            }
+
+            .card-descripton {
+                        display:block;
+                        padding:25px;
+                        width:auto !important;
+            }
+
+            .card-descripton .card-content {
+                        text-align:left;
+                        vertical-align:text-top;
             }
 
             /* Stylish Heading */
