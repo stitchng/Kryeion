@@ -8,14 +8,10 @@
  * 
  * @credits: https://github.com/kristoferjoseph/flexboxgrid/ (https://twitter.com/dam - @dam)
  */
-
 @charset "utf-8";
 
-@-ms-viewport {
-    width:device-width;
-}
 
-            /* ==== ==== */
+            /* ==== CUSTOM SETUPS [SETTINGS] ==== */
 
             @supports (height: 100vh) {
                    .expand-fill-vertical {
@@ -27,7 +23,7 @@
                    height:100%;
             }
 
-            /* ===== CUSTOM RESET CSS  ===== */
+            /* ===== CUSTOM RESET CSS [GENERICS]  ===== */
 
             article, 
             aside, 
@@ -67,7 +63,7 @@
                   color: #000;
             }
 
-            /** IE Fixes **/
+            /** Old IE Fixes **/
 
             img { 
                border: 0; 
@@ -1730,6 +1726,10 @@
                 -pie-png-fix:true;
               }
 
+              @-ms-viewport {
+                 width:device-width;
+             }
+
               .no-flexbox .kr-row {
                   width:auto !important;
               }
@@ -1967,7 +1967,7 @@
                   margin-bottom:10px;
               }
 
-              @media (max-width:768px) {
+              @media (max-width:640px) {
                     .no-flexbox .kr-column {
                          float:none;
                     }
@@ -1987,3 +1987,7 @@
                         margin-top:20px;
                     }
               }
+
+                @media (max-width:480px) {
+
+                }
