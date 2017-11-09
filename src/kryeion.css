@@ -1,5 +1,5 @@
 /**!
- * @version: v0.1.4
+ * @version: v0.1.5
  * @name: Kryeion (https://github.com/isocroft/Kryeion)
  * @copyright: Copyright (c) 2017, Oparand Ltd.
  * @license: MIT (https://github.com/iscroft/Kryeion/blob/master/LICENSE)
@@ -334,6 +334,13 @@
             input::-moz-focus-inner { 
                    border: 0; 
                    padding: 0; 
+            }
+
+            .full-screener:-moz-full-screen,
+            .full-screener:-webkit-full-screen,
+            .full-screener:-ms-fullscreen, 
+            .full-screener:fullscreen {
+                        background-color:rgba(0,0,0, 0.32);
             }
 
             ::-webkit-input-placeholder, /* Chrome 4+/Safri/Opera 15+ */
