@@ -968,13 +968,13 @@
             .modal-container .modal-foot {
                         width:auto !important;
                         padding-left:30px;
-                        padding-right:50px;;
+                        padding-right:30px;
                         background-color:transparent;
             }
 
             .modal-container .modal-head {
-                        padding-top:30px;
-                        padding-bottom:24px;
+                        padding-top:5px;
+                        padding-bottom:5px;
             }
 
             .modal-container .modal-body {
@@ -991,7 +991,7 @@
                         color:#666666;
                         width:100%;
                         line-height:normal;
-                        padding:27px 20px 0;
+                        padding:10px 10px 0;
                         position:relative;
             }
             
@@ -1862,13 +1862,30 @@
 
             /* Navigation */
 
-            .flexbox .nav {
+            .flexbox .nav,
+	    .flexbox .nav .nav-menu {
             
             }
 
-            .flexbox .nav {
+            .no-flexbox .nav {
 
             }
+
+            .flexbox .nav .nav-menu[data-orientation="horizontal"] {
+
+	    }
+
+	    .flexbox .nav .nav-menu[data-orientation="vertical"] {
+
+	    }
+
+	    .no-flexbox .nav .nav-menu[data-orientation="horizontal"] {
+
+	    }
+
+	    .no-flexbox .nav .nav-menu[data-orientation="vertical"] {
+
+	    }
 
             /* Tables */
 
