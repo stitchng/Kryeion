@@ -876,6 +876,8 @@
             /* Quotes & Highlighted Text */
 
             blockquote[enhanced] {
+
+                        
                         font-size:29px;
                         text-transform:capitalize;
             }
@@ -901,6 +903,88 @@
                         content: "\275E"; 
                         color:#444;
                         display:inline !important; 
+            }
+
+            /* Modals */
+
+            .modal {
+                        position:fixed;
+                        width:100%;
+                        height:100%;
+                        z-index:1200;
+                        top:0;
+                        left:0;
+                        overflow:hidden;
+                        background-color:transparent;
+            }
+
+            /* fallback for `rgba()` using proprietary IE filters by Julio Loayza */
+            /* See: https://css-tricks.com/rgba-browser-support/ */
+
+            .modal.kr-backdrop-overlay {
+                        *filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#73000000,endColorstr=#73000000); /* star hack for IE 6/7 */
+                        -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=#73000000,endColorstr=#73000000)"; /*  IE 8 */
+	            background-color:rgba(0, 0, 0, 0.45);
+	            zoom: 1;
+            }
+
+            .modal-container {
+	            position:absolute;
+	            max-width:980px;
+	            min-width:480px;
+	            left:50%;
+	            top:20%;
+	            margin-left:-620px;
+	            z-index:1300;
+	            background-color:transparent;
+	            height:auto !important;
+            }
+
+            .modal-conainer.standard {
+                        background-color:#ffffff;
+            }
+
+            .modal-boxing {
+                        position:relative;
+                        width:100%;
+                        background-color:#ffffff;
+                        box-shadow: 0px 4px 4px rgba(222, 222, 222, 0.03);
+            }
+
+            .modal-conainer.standard .modal-boxing {
+                        box-shadow:none;
+            }
+
+            .modal-container .modal-head,
+            .modal-container .modal-body,
+            .modal-container .modal-foot {
+                        width:auto !important;
+                        padding-left:30px;
+                        padding-right:50px;;
+                        background-color:transparent;
+            }
+
+            .modal-container .modal-head {
+                        padding-top:30px;
+                        padding-bottom:24px;
+            }
+
+            .modal-container .modal-body {
+                        padding-top:10px;
+                        padding-bottom:20px;
+            }
+
+            .modal-container .modal-foot {
+                        padding-top:20px;
+                        padding-bottom15px;
+            }
+
+            .modal-container .modal-head .header {
+                        color:#666666;
+                        width:100%;
+                        line-height:normal;
+                        padding:27px 20px 0;
+                        position:relative;
             }
             
             /* Buttons */
