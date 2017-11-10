@@ -190,7 +190,7 @@ Kryeion makes it really easy to create custom widgets and simple no-tween effect
 ## Browser Support
 
 * IE 8.0+
-* Chrome 3.0+
+* Chrome 4.0+
 * Firefox 3.5+
 * Safari 3.2+
 * Opera 9.5+ 
