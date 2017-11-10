@@ -172,10 +172,10 @@ Kryeion makes it really easy to create custom widgets and simple no-tween effect
                 <nav class="tab-box anchor-right">
                     <ul class="tab tab-pinned">
                         <li class="tab-item">
-                            <a href="javascript:void(0);" class="tab-item-button active-item tablet"><span class="tab-text-sup">Up Votes</span><b class="tb-text-sub">5</b></a>
+                            <a href="javascript:void(0);" class="tab-item-button active-item top-half-pill"><span class="tab-text-sup">Up Votes</span><b class="tb-text-sub">5</b></a>
                         </li>
                         <li class="tab-item">
-                            <a href="javascript:void(0);" class="tab-item-button tablet"><span class="tab-text-sup">Down Votes</span><b class="tab-text-sub">11</b></a>
+                            <a href="javascript:void(0);" class="tab-item-button top-half-pill"><span class="tab-text-sup">Down Votes</span><b class="tab-text-sub">11</b></a>
                         </li>
                     </ul>
                 </nav>
