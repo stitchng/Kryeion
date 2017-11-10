@@ -918,9 +918,9 @@
                         background-color:transparent;
             }
 
-		.modal.kr-backdrop {
+	    .modal.kr-backdrop {
 			overflow:hidden;
-		}
+	     }
 
             /* fallback for `rgba()` using proprietary IE filters by Julio Loayza */
             /* See: https://css-tricks.com/rgba-browser-support/ */
@@ -940,11 +940,10 @@
 	     }
 
             .modal-container {
-	            max-width:980px;
-	            min-width:480px;
+	            width:980px;
 	            left:50%;
 	            top:20%;
-	            margin-left:-620px;
+	            margin-left:-490px;
 	            z-index:1300;
 	            background-color:transparent;
 	            height:auto !important;
@@ -1875,6 +1874,7 @@
 
             .table {
                   display:block;
+		  width:100%;   
                   min-height:250px;
             }
 
@@ -2275,6 +2275,16 @@
                   margin-bottom:10px;
               }
 
+		/* Media Rules for Tablet Devices */
+
+		@media (max-width:1024px) {
+			.modal-container {
+				width:840px;
+			}
+		}	
+
+		/* Media Rules for Mobile Devices */ 
+
               @media (max-width:640px) {
                     .no-flexbox .kr-column {
                          float:none;
@@ -2294,6 +2304,10 @@
                     .flexbox .kr-row + .kr-row {
                         margin-top:20px;
                     }
+		      
+		      .modal-container {
+		      		width:480px;
+		      } 
               }
 
                 @media (max-width:480px) {
