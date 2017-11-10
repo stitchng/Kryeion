@@ -21,7 +21,7 @@ Kryeion makes it really easy to create custom widgets and simple no-tween effect
     <!-- MODALS-->
     
     <section class="modal kr-backdrop" data-overlay-color="black">
-        <div class="modal-container standard">
+        <div class="modal-container as-dialog">
             <div class="modal-boxing">
                 <div class="modal-head">
     
