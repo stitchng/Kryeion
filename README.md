@@ -18,6 +18,24 @@ Kryeion makes it really easy to create custom widgets and simple no-tween effect
     </head>
     <body>
     
+    <!-- MODALS-->
+    
+    <section class="modal kr-backdrop" data-overlay-color="black">
+        <div class="modal-container standard">
+            <div class="modal-boxing">
+                <div class="modal-head">
+    
+                </div>
+                <div class="modal-body">
+    
+                </div>
+                <div class="modal-foot">
+    
+                </div>
+            </div>
+        </div>
+    </section>
+    
      <div class="kr-boxing">
        <div class="kr-row">
         <div class="kr-column column-four">
@@ -28,7 +46,10 @@ Kryeion makes it really easy to create custom widgets and simple no-tween effect
                         <strong class="fancyheading-pane-placeholder">New Intakes</strong> 
                 </small>
             </h1>
-            <div class="listings">
+    
+            <!-- PERSONA WIDGET -->
+    
+            <div class="persona">
                     <ul class="persona-element">
                         <li>
                             <div class="persona-box">
@@ -54,9 +75,13 @@ Kryeion makes it really easy to create custom widgets and simple no-tween effect
                         </li>
                     </ul>
  
+                    <!-- PANELS -->
+    
                     <div clss="panel">
  
                     </div>
+    
+                       <!-- TABLES -->
  
                     <div class="table">
                             <p class="table-sidetext-box">
@@ -79,6 +104,8 @@ Kryeion makes it really easy to create custom widgets and simple no-tween effect
                             </table>
                      </div>
 
+                    <!-- CARD WIDGET -->
+    
                     <div class="card">
                              <div class="card-figure">
                                   <figure class="card-figure-content" data-aspect-ratio="4by3">
@@ -101,7 +128,8 @@ Kryeion makes it really easy to create custom widgets and simple no-tween effect
                         </div> 
                    </div>
  
- 
+                    <!-- NAVIGATION -->
+    
                     <nav class="nav">
                           <ul class="nav-menu">
                                  <li class="nav-menu-item"><a href="javascript:void(0);" class="nav-menu-item-button">Home</a></li>
@@ -109,8 +137,10 @@ Kryeion makes it really easy to create custom widgets and simple no-tween effect
                           </ul>
                    </nav>
 
+                    <!-- BUTTONS / BUTTON PACKS -->
+    
                    <div class="button-pack">
-                        <section class="button-sub-pack kr-spaced">
+                        <section class="button-sub-pack kr-spaced" role="dropdwn-box">
                               <a href="javascript:void(0);" class="button kr-gradiented">
                                   Dropping
                               </a>
@@ -121,7 +151,7 @@ Kryeion makes it really easy to create custom widgets and simple no-tween effect
                                    </ul>
                               </div>
                          </section>
-                         <section class="button-sub-pack kr-spaced">
+                         <section class="button-sub-pack kr-spaced" role="dropdwn-box">
                               <button class="button kr-gradiented pill">
                                   All Notifications
                               </button>
@@ -130,17 +160,22 @@ Kryeion makes it really easy to create custom widgets and simple no-tween effect
                               </div>
                          </section>
                    </div>
+    
+    
             </section>
            </article>
            </div>
            <div class="kr-column column-eight"> 
+    
+                <!-- TABS -->
+    
                 <nav class="tab-box anchor-right">
                     <ul class="tab tab-pinned">
                         <li class="tab-item">
-                            <a href="javascript:void(0);" class="tab-item-button active-item tablet"><span class="tab-text-sup">Up Votes</span><b class="text-sub">5</b></a>
+                            <a href="javascript:void(0);" class="tab-item-button active-item tablet"><span class="tab-text-sup">Up Votes</span><b class="tb-text-sub">5</b></a>
                         </li>
                         <li class="tab-item">
-                            <a href="javascript:void(0);" class="tab-item-button tablet"><span class="tab-text-sup">Down Votes</span><b class="text-sub">11</b></a>
+                            <a href="javascript:void(0);" class="tab-item-button tablet"><span class="tab-text-sup">Down Votes</span><b class="tab-text-sub">11</b></a>
                         </li>
                     </ul>
                 </nav>
@@ -154,11 +189,11 @@ Kryeion makes it really easy to create custom widgets and simple no-tween effect
 
 ## Browser Support
 
-* IE 8+
-* Chrome 2+
+* IE 8.0+
+* Chrome 3.0+
 * Firefox 3.5+
-* Safari 3.1+
-* Opera 9+ 
+* Safari 3.2+
+* Opera 9.5+ 
 
 ## License
 
