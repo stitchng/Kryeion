@@ -80,13 +80,19 @@ Kryeion makes it really easy to create custom widgets and simple no-tween effect
                     <section clss="panel">
                         <div class="panel-boxing">
                             <div class="panel-head">
-    
+                                 <h3 class="panel-heading">Welocme!</h3>
                             </div>
                             <div class="panel-body">
     
                             </div>
                         </div>
                     </section>
+ 
+                     <!-- ACCORDIONS -->
+               
+                     <section class="accordion" data-toggle-behavior="collapse-all">
+ 
+                     </section>
     
                        <!-- TABLES -->
  
