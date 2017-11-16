@@ -713,11 +713,11 @@
 	    /* Stylish Heading / Content Rule  */
 
 	    .kr-hr {
-		 background:#acacac;
-		 margin:20px -25px 35px;
-		 padding:0 25px 1px;
+		 background-color:transparent !important;
+		 margin:20px 1px 35px;
+		 padding:10px 15px !important;
 		 position:relative;
-		 color:#ffffff;
+         	border-bottom:1px solid #acacac !important;
 	    }
 
 	   .kr-hr:before {
@@ -725,7 +725,7 @@
 		 display:block;
 		 border-color:transparent;
 		 border-style:solid;
-		 bottom:-13px;
+		 bottom:-14px;
 		 left:45px;
 		 border-top-color:#acacac;
 		 content:" ";
@@ -746,8 +746,7 @@
 		 border-width:6px;
 		 box-sizing:border-box !important;
 		 z-index:2;
-	    }
-
+     	    }
 
             /* Icons */
 
