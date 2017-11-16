@@ -710,6 +710,45 @@
                 font-weight:bold;
             }
 
+	    /* Stylish Heading / Content Rule  */
+
+	    .kr-hr {
+		 background:#acacac;
+		 margin:20px -25px 35px;
+		 padding:0 25px 1px;
+		 position:relative;
+		 color:#ffffff;
+	    }
+
+	   .kr-hr:before {
+		 position:absolute;
+		 display:block;
+		 border-color:transparent;
+		 border-style:solid;
+		 bottom:-13px;
+		 left:45px;
+		 border-top-color:#acacac;
+		 content:" ";
+		 border-width:7px;
+		 box-sizing:border-box !important;
+		 z-index:2;
+	    }
+
+	    .kr-hr:after {
+		 position:absolute;
+		 display:block;
+		 border-color:transparent;
+		 border-style:solid;
+		 bottom:-11px;
+		 left:46px;
+		 border-top-color:#ffffff;
+		 content:" ";
+		 border-width:6px;
+		 box-sizing:border-box !important;
+		 z-index:2;
+	    }
+
+
             /* Icons */
 
             i.kr-icon {
