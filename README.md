@@ -4,7 +4,7 @@ A mid-sized, unopinionated CSS library for quick application of custom UI styles
 
 ## About
 
-Kryeion makes it really easy to create custom widgets and simple no-tween effects by simply adding a class or set of classes to your HTML. It's really that simple. It works great with (and actually depends on) both [**Modernizr**](https://github.com/Modernizr/Modernizr) and [**Browsengine**](https://github.com/isocroft/browsengine). With Kryeion, we are still investigating the viability of eliminating JS feature/engine detection dependencies using the new <u style="color:indigo;"><b>@supports</b></u> _conditional at-rule_ for feature/engine detection. Therefore, it's important to note that this CSS library is still in active development with lots of experimentation going on. However, this project is commited to building out a **beta release** and **candidate recommendation** in the coming months. Finally, Kryeion is written with a lot of cutting-edge best practice owing to its' use of OOCSS ([**Object-Oriented CSS**](https://www.smashingmagazine.com/2011/12/an-introduction-to-object-oriented-css-oocss/)) CSS Methodology and ITCSS ([**Inverted Triangle of CSS**](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/)) Code Architecture and a pre-compiled SASS file for modularity.
+Kryeion makes it really easy to create custom widgets and simple no-tween effects by simply adding a class or set of classes to your HTML. It's really that simple. It works great with (and actually depends on) both [**Modernizr**](https://github.com/Modernizr/Modernizr) and [**Browsengine**](https://github.com/isocroft/browsengine). With Kryeion, we are still investigating the viability of eliminating JS feature/engine detection dependencies using the new <u style="color:indigo;"><b>@supports</b></u> _conditional at-rule_ for feature/engine detection. Therefore, it's important to note that this CSS library is still in active development with lots of experimentation going on. However, this project is commited to building out a **beta release** and **release candidate** in the coming months. Finally, Kryeion is written with a lot of cutting-edge best practice owing to its' use of OOCSS ([**Object-Oriented CSS**](https://www.smashingmagazine.com/2011/12/an-introduction-to-object-oriented-css-oocss/)) CSS Methodology and ITCSS ([**Inverted Triangle of CSS**](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/)) Code Architecture and a pre-compiled SASS file for modularity.
 
 ## How to Use
 
@@ -87,12 +87,7 @@ Kryeion makes it really easy to create custom widgets and simple no-tween effect
                             </div>
                         </div>
                     </section>
- 
-                     <!-- ACCORDIONS -->
-               
-                     <section class="accordion" data-toggle-behavior="collapse-all">
- 
-                     </section>
+
     
                        <!-- TABLES -->
  
