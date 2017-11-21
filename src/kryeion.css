@@ -344,6 +344,11 @@
                    padding: 0; 
             }
 
+	    [aria-os-data="Macintosh"] input,
+            [aria-os-data="Macintosh"] textarea {
+                 -webkit-text-stroke-width:.2px;
+            }
+
             .full-screener:-moz-full-screen,
             .full-screener:-webkit-full-screen,
             .full-screener:-ms-fullscreen, 
