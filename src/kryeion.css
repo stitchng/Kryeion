@@ -319,6 +319,16 @@
                   *overflow: visible; 
             }
 
+	    input[type="password"]:invalid,
+	    input[type="text"]:invalid,
+	    input[type="email"]:invalid {
+		border: 1px solid #F2000B;
+	    	color: #F2000B;
+	    	-webkit-box-shadow: none;
+	        -moz-box-shadow: none;
+	    	box-shadow: none;
+	    }
+
             input[type="checkbox"], 
             input[type="radio"] { 
                   padding: 0; 
@@ -359,7 +369,9 @@
             ::-webkit-input-placeholder, /* Chrome 4+/Safri/Opera 15+ */
             :-moz-placeholder, /* Firefox 18- */
             ::-moz-placeholder, /* Firefox 19+ */
-            :-ms-input-placeholder { /* Edge/IE 10+ */
+            :-ms-input-placeholder, /* Edge/IE 10 */
+	    ::-ms-input-placeholder, /* Edge 15+/IE 11 */
+	    ::placeholder {
                 color:#e4e4e4;
             }
 
@@ -748,6 +760,18 @@
                 color:#32e1f0;
                 font-weight:bold;
             }
+
+	   /* Images */
+
+	    .image-bicubic {
+	    	-ms-interpolation-mode: bicubic;
+	    	image-rendering: optimizeQuality;
+	    }
+
+	    .image-nearest {
+		-ms-interpolation-mode: nearest-neighbor;
+	    	image-rendering: optimizedSpeed;
+	    }
 
 	    /* Stylish Heading / Content Rule  */
 
