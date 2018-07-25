@@ -299,6 +299,67 @@
                   *vertical-align: middle; 
             }
 
+	    span.combo-box {
+		  display:inline-block;
+		  padding:0px 14px 1px 0px;
+		  margin:0;
+		  position:relative;
+		  border:1px solid #bdbdbd;
+		}
+
+		/* IE 10+ only */
+		select::-ms-expand {
+		    display: none;
+		}
+
+		span.combo-box select > option {
+		   background-color:#a4a4a4;
+		   color:#ffffff;
+		}
+
+		span.combo-box > select{
+		  display:inline-block;
+		  position:absolute;
+		  top:3px;
+		  left:0;
+		  border:none;
+		  width:100%;
+		  -moz-apperance:none;
+		  -webkit-appearance:none;
+		  text-indent: 1px; /* Firefox 30- */
+		  text-overflow: '';
+		  appearance:none;
+		  opacity:0;
+		}
+
+		span.combo-box[dimed]{
+		   min-width:60px;
+		}
+
+		span.combo-box::before,
+		span.combo-box::after {
+		  display:inline-block;
+		  position:relative;
+		  float:left;
+		}
+
+		span.combo-box::before {
+		  text-indent:6px;
+		  pointer-events:none;
+		  color:#a424ba;
+		  content: attr(placeholder) "  ";
+		}
+
+		span.combo-box::after{
+		    content: "\25bc";
+		    width: 2px;
+		    font-size: 60%;
+		    height: 2px;
+		    top:5px;
+		    margin-left: 8px;
+		    pointer-events: none;
+		}
+
             textarea { 
                   overflow: auto; 
                   vertical-align: top; 
