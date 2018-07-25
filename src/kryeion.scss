@@ -10,7 +10,7 @@
  * @type: CSS
  * @credits: https://github.com/kristoferjoseph/flexboxgrid/ (https://twitter.com/dam - @dam)
 
-/* ==== CUSTOM SETUPS [SETTINGS] ====
+/* ==== CUSTOM SETUPS [SETTINGS] ==== */
 
 @supports (height: 100vh)
   .expand-fill-vertical
@@ -20,7 +20,7 @@
   .expand-fill-vertical
     height: 100%
 
-/* ===== CUSTOM RESET CSS [GENERICS]  =====
+/* ===== CUSTOM RESET CSS [GENERICS]  ===== */
 
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section
   display: block
@@ -43,7 +43,7 @@ button, input, select, textarea
   font-family: sans-serif
   color: #000
 
-/** Old IE Fixes *
+/** Old IE Fixes */
 
 img
   border: 0
@@ -55,7 +55,7 @@ svg:not(:root)
 figure
   margin: 0
 
-/** Links *
+/** Links */
 
 a
   &[href="#"], &[href="javascript:void(0);"]
@@ -65,11 +65,11 @@ a
   &:hover, &:active
     outline: 0
 
-/** Typography *
+/** Typography */
 
 h1
   font-size: 2em
-  /* fixes html5 bug
+  /* fixes html5 bug */
 
 p
   -webkit-hyphens: auto
@@ -110,13 +110,13 @@ pre, code, kbd, samp
   -webkit-font-smoothing: auto
   font-family: monospace, serif
   *font-family: 'courier new'
-  /* supporting IE 6 / 7 / 8
+  /* supporting IE 6 / 7 / 8 */
   font-size: 1em
 
 pre
   white-space: pre-wrap
   *white-space: pre
-  /* supporting IE 6 / 7 / 8
+  /* supporting IE 6 / 7 / 8 */
   word-wrap: break-word
 
 blockquote
@@ -132,7 +132,7 @@ ul, ol
   margin: 1.5em 0
   padding: 0
 
-/* Normalizations
+/* Normalizations */
 
 html, body, div, p, ol, ul, li, dl, dt, dd, blockquote, figure, form, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6
   margin: 0
@@ -179,7 +179,7 @@ fieldset
     margin: 0
     border: 0
 
-/* Position subscript and superscript content without affecting line-height: gist.github.com/413930
+/* Position subscript and superscript content without affecting line-height: gist.github.com/413930 */
 
 sub
   line-height: 0
