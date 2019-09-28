@@ -800,6 +800,17 @@
                 filter:alpha(opacity=0);
             }
 
+	    .draggable,
+	    [draggable] {
+		-moz-user-select: none;
+		-khtml-user-select: none;
+  		-webkit-user-select: none;
+  		user-select: none;
+  		/* Required to make elements draggable in old WebKit */
+  		-khtml-user-drag: element;
+  		-webkit-user-drag: element;
+	    }
+
             img[longdesc]:after {
                 content:attr(longdesc);
                 display:inline-block;
@@ -1899,7 +1910,7 @@
             .no-borderradius .yes-old-ms  .right-half-pill,
             .no-borderradius .yes-old-ms .right-half-ultrapill {
                 position:relative;
-                behavior:url('https://cdn.jsdelivr.net/css3pie/2.0b1/PIE.htc');
+                behavior:url('https://cdn.jsdelivr.net/npm/css3pie@2.1.0-beta/release/PIE.htc');
             }
 
             .card-figure .card-figure-content > img,
