@@ -278,7 +278,7 @@
                  bottom:1ex; 
             }
 
-            /** Forms **/
+            /** Form Resets **/
 
             fieldset {
                  position:relative;
@@ -288,6 +288,17 @@
                  border: 0; 
                  *margin-left: -7px; 
             }
+
+	    button, input, select, textarea {
+		font: inherit;
+    		font-family: inherit;
+    		/*font-size: inherit;*/
+    		line-height: inherit;
+	   }
+
+	   button, select {
+                text-transform: none;
+           }
 
             button, 
             input, 
@@ -308,6 +319,7 @@
 		}
 
 		/* IE 10+ only */
+		.form-select::-ms-expand,
 		select::-ms-expand {
 		    display: none;
 		}
@@ -460,18 +472,126 @@
                 letter-spacing:0;
             }
 
+	    input[type=range], input[as-range] {
+  		-webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  		width: 100%; /* Specific width is required for Firefox. */
+  		background: transparent; /* Otherwise white in Chrome */
+	    }
+
+	    input[type=range]::-webkit-slider-thumb,
+            input[type=range]::-moz-range-thumb,
+            input[type=range]::-ms-thumb {
+  		border: 1px solid transparent;
+  		height: 16px;
+  		width: 16px;
+  		background-color: #777777;
+  		cursor: pointer;
+	   }
+
+	   input[type=range]:focus::-ms-thumb {
+  		box-shadow: 0px 0px 2px #999999, 0px 0px 1px #888888; /* Add cool effects to your sliders! */
+	   }
+
+	   .yes-moz input[type=range]::-moz-range-thumb  {
+  		-moz-border-radius: 50%;
+  		border-radius: 50%;
+	   }
+
+	   .yes-moz input[type=range]:focus::-moz-range-thumb  {
+  		-moz-box-shadow: 0px 0px 2px #999999, 0px 0px 1px #888888; /* Add cool effects to your sliders! */
+  		box-shadow: 0px 0px 1px #999999, 0px 0px 1px #888888; /* Add cool effects to your sliders! */
+	   }
+
+	   .yes-webkit input[type=range]::-webkit-slider-thumb {
+       		-webkit-appearance: none; 
+  		-webkit-border-radius: 50%;
+   		border-radius: 50%;
+  		margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+	   }
+
+	   .yes-webkit input[type=range]:focus::-webkit-slider-thumb {
+  		-webkit-box-shadow: 0px 0px 2px #999999, 0px 0px 1px #888888; /* Add cool effects to your sliders! */
+  		-o-border-radius: 50%;
+  		box-shadow: 0px 0px 2px #999999, 0px 0px 1px #888888; /* Add cool effects to your sliders! */
+	   }
+
+	   input[type=range]:focus, input[as-range]:focus {
+  		outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+	   }
+
+	   input[type=range]::-ms-track,
+	   input[type=range]::-webkit-slider-runnable-track, 
+	   input[type=range]::-moz-range-track {
+  		width: 100%;
+  		cursor: pointer;
+  		height: 4.2px;
+  		background-color: orange;
+  		border-radius: 1.3px;
+  		border: 0.2px solid #ddc;
+    	   }
+
+	   input[type=range]::-ms-track {
+  		/* Hides the slider so custom styles can be added */
+  		background: transparent; 
+  		border-color: transparent;
+  		border-width: 8px 0;
+  		box-shadow: 1px 1px 2px #777 inset, 0px 0px 2px #ffffff;
+  		color: transparent;
+	   }
+
+ 	   input[type=range]::-webkit-slider-runnable-track {
+  		-webkit-box-shadow: 1px 1px 2px #777 inset, 0px 0px 2px #ffffff;
+  		box-shadow: 1px 1px 2px #777 inset, 0px 0px 2px #ffffff;
+	   }
+
+input[type=range]:focus::-ms-fill-lower,
+input[type=range]:focus::-ms-fill-upper,
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background-color: #fafafa;
+}
+
+input[type=range]::-moz-range-track {
+  -moz-box-shadow: 1px 1px 2px #888 inset, 0px 0px 2px #ffffff;
+  box-shadow: 1px 1px 2px #888 inset, 0px 0px 2px #ffffff;
+}
+  
+input[type=range]::-ms-fill-lower {
+  background: #2a6495;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+
+input[type=range]::-ms-fill-upper {
+  background: #3071a9;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+} 
+
             /* ===== MAIN STYLES [ELEMENTS] ===== */
 
-            body * {
+            body *,
+	    *::before, 
+	    *::after{
                 -ms-box-sizing: border-box;
                 -moz-box-sizing: border-box;
                 -webkit-box-sizing: border-box;
+		-o-box-sizing:border-box;
                 box-sizing: border-box;
                 outline: 0 !important;
             }
 
-            body *:before, 
-            body *:after {
+	    /*
+	       *, *::before, *::after {
+  			-webkit-box-sizing: border-box;
+  			-moz-box-sizing:border-box;
+  			-o-box-sizing:border-box;
+    			box-sizing: border-box;
+		}
+	    */
+
+            svg, math {
                -ms-box-sizing: inherit;
                -moz-box-sizing: inherit;
                -webkit-box-sizing: inherit;
@@ -1516,7 +1636,7 @@
                  display:inline-block;
                  display:-moz-inline-box; /* Support for old Gecko browsers e.g. Camino, Firefox */
                  *display:inline; /* Make `display:inline-block;` work in IE 7 - Star hack */
-                 *zoom:1;
+                 *zoom:1; /* Trigger `hasLayout` */
             }
 
             .flexbox .tab-box .tab-item,
@@ -1570,7 +1690,7 @@
                 border-color:#888888;
             }
 
-            /* Form Input Component */
+            /* Input Component (Form Groups) */
 
             .form-group .input-text,
             .form-group .input-dropdown {
@@ -1578,11 +1698,11 @@
                 padding:0 3px 0 5px;
                 border:1px solid #999999;
                 background-color: #ffffff;
-                -moz-box-shadow:0 1px 12px -7px #5d5d5d inset;
-                -webkit-box-shadow:0 1px 12px -7px #5d5d5d inset;
-                box-shadow:0 1px 12px -7px #5d5d5d inset;
+                -moz-box-shadow:0 1px 12px -9px #5d5d5d inset;
+                -webkit-box-shadow:0 1px 12px -9px #5d5d5d inset;
+                box-shadow:0 1px 12px -9px #5d5d5d inset;
                 position: relative;
-                behavior:url('https://cdn.jsdelivr.net/css3pie/2.0b1/PIE.htc');
+                behavior:url('https://cdn.jsdelivr.net/npm/css3pie@2.1.0-beta/release/PIE.htc');
             }
 
             .form-group .input-dropdown .input-dropdown-addon {
@@ -1650,6 +1770,100 @@
             .form-group + .form-group {
                 margin-top:15px;
             }
+
+	    /* Input Component (Form Controls) */
+
+	    .form-control-box {
+    position: relative;
+    padding: 15px;
+    font-size: 13px;
+    line-height: 1.4;
+    border: 1px solid transparent;
+}
+
+.form-select::-ms-expand{
+   display:none;
+}
+
+.form-datepicker,
+.form-select {
+  padding-right: 24px;
+  padding-right: 8px\9;
+  outline:none;
+  -moz-outline-style:none;
+  background-color: #fffff;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.form-input, .form-select, .form-datepicker {
+    display: inline-block;
+    min-height: 34px;
+    padding: 6px 8px;       
+    font-size: 14px;
+    line-height: 20px;
+    color: #333;
+    vertical-align: middle;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.075);
+    -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,.075);
+}
+
+label[for] .form-input,
+label[for] .form-select,
+label[for] .form-datepicker{
+  width:100%;
+}
+
+label[has-control="true"]{
+  position:relative;
+}
+
+label[has-control="true"]::after{
+  content:attr(control-icon);
+  position:absolute;
+  z-index:1;
+  right:10px;
+  top:-2px;
+  pointer-events:none;
+  font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+  font-size:15px;
+  color:#bbbbbb;
+}
+
+label[has-control="true"][for]::after{
+  top:6px !important;
+}
+
+.form-input{
+  padding-right: 8px;
+}
+
+.form-datepicker,
+.form-select{
+  padding-right: 24px;
+}
+
+input[type="checkbox"], 
+input[type="radio"] {
+  position: absolute;
+  left:0px;
+  bottom:0px;
+  z-index:100;
+  opacity:0;
+  width:20px;
+  height:20px;
+  cursor: pointer;
+}
+
+	    /* Form Edit-Mode Helpers */
 
             [contenteditable] {
                  display:inline-block;
