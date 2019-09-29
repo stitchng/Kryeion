@@ -1019,21 +1019,38 @@
 		padding:6px;
 		text-align:center;
 		line-hieght:16px;
-		width:23px;
+		width:23px; /* 1em */
+	    	/* height:23px; 1em */
 		box-sizing:content-box !important;
             }
 
-            i:before,
+            i::before,
             a.kr-icon::before {
 		display:inline !important;
+	    	/*font-family: 'Material Icons';*/
 		font-weight:bold;
-		white-space:nowrap;
-		color:#999999;
 		font-style:normal;
+	    	/* width: 1em;
+	    	height: 1em; */
+  		line-height: 1;
+  		text-transform: none;
+  		letter-spacing: normal;
+  		word-wrap: normal;
+		white-space:nowrap;
+	    	direction: ltr;
+		color:#999999;
+	    	/* Support for all WebKit browsers. */
+  		-webkit-font-smoothing: antialiased;
+  		/* Support for Safari and Chrome. */
+  		text-rendering: optimizeLegibility;
+  		/* Support for Firefox. */
+  		-moz-osx-font-smoothing: grayscale;
+  		/* Support for IE. */
+  		font-feature-settings: 'liga';
             }
 
-            i.message:before,
-            i.mail:before,
+            i.message::before,
+            i.mail::before,
             a.kr-icon[href^="mailto:"]::before,
 	    a.kr-icon[href^="tel:"]::before {
 		content:"\2709";
@@ -1111,7 +1128,7 @@
 		font-size:17px;
             }
 
-            i.copyright:before {
+            i.copyright::before {
 		content:"\24D2";
 		font-size:17px;
             }
@@ -1120,6 +1137,11 @@
 		content:"\23DA";
 		font-size:17px;
             }
+
+	    i.face::before {
+		content:"\E87C";
+	    	font-size:17px;
+	    }
 
             i.three-o::before,
             ol[enhanced] li.three::before {
@@ -1805,7 +1827,9 @@
     		appearance: none;
 	     }
 
-	     .form-input, .form-select, .form-datepicker {
+	     .form-input, 
+	     .form-select, 
+	     .form-datepicker {
     		display: inline-block;
     		min-height: 34px;
     		padding: 6px 8px;       
@@ -1825,38 +1849,68 @@
 
 	     label[for] .form-input,
 	     label[for] .form-select,
-	     label[for] .form-datepicker{
+	     label[for] .form-datepicker {
   		width:100%;
 	     }
 
-	     label[has-control="true"]{
+	     label[for],
+	     [textholder]{
+  		display:block;
   		position:relative;
 	     }
 
-	     label[has-control="true"]::after{
+	     label.inline[for]{
+  		display:inline-block !important;
+	     }
+
+	     [textholder]::before{
+  		content:" " attr(textholder) " ";
+  		display:inline-block;
+	     }
+
+	     [textholder] .note {
+    		display: block;
+    		margin: 0;
+    		font-size: 10px;
+    		font-weight: 300;
+    		color: #586069;
+	     }
+
+	     .note {
+    		min-height: 17px;
+    		margin: 4px 0 2px;
+    		font-size: 12px;
+    		color: #586069;
+	     }
+
+	     label[has-control="true"] {
+  		position:relative;
+	     }
+
+	     label[has-control="true"]::after {
   		content:attr(control-icon);
   		position:absolute;
   		z-index:1;
   		right:10px;
   		top:-2px;
   		pointer-events:none;
-  		font-family: FontAwesome, IconMoon;
+  		font-family: FontAwesome, 'IconMoon';
     		font-style: normal;
     		font-weight: normal;
   		font-size:15px;
   		color:#bbbbbb;
 	     }
 
-	     label[has-control="true"][for]::after{
+	     label[has-control="true"][for]::after {
   		top:6px !important;
 	     }
 
-	     .form-input{
+	     .form-input {
   		padding-right: 8px;
 	     }
 
 	     .form-datepicker,
-	     .form-select{
+	     .form-select {
   		padding-right: 24px;
 	     }
 
@@ -1870,6 +1924,101 @@
   		width:20px;
   		height:20px;
   		cursor: pointer;
+	     }
+
+	     /* Input Component (Form Controls Placement/Replacement) */
+
+	     label[for] span[role="icon-placement"]{
+  		position:absolute;
+  		z-index:0;
+  		left:1px;
+  		top:1px;
+  		background-color:#ffffff;
+  		width:26px;
+  		height:32px;
+  		text-align:center;
+  		display:inline-block;
+  		border-right:1px solid #dddddd;
+	     }
+
+	     label[for] span[role="icon-placement"]::before {
+  		display:inline-block;
+		content:attr(icon);
+    		font-family: FontAwesome;
+    		font-style: normal;
+    		font-weight: normal;
+  		color: #888888;
+    		padding:7px 0px;
+	     }
+
+	     label[for] span[role="icon-placement"] + input.form-input,
+	     [textholder] span[role="icon-placement"] + input.form-input{
+  		padding-left:29px;
+	     }
+
+	     span[role="control-replacement"] {
+  		display:block;
+  		position: relative;
+  		margin: 10px 0;
+  		padding-left: 25px;
+             }
+
+	     span[role="control-replacement"]::before, span[role="control-replacement"]::after {
+  		content: '';
+  		position: absolute;
+  		top: 0;
+  		left: 0;
+	     }
+
+	     input[type="radio"] + span[role="control-replacement"]::before,
+	     input[type="radio"] + span[role="control-replacement"]::after {
+	     	-webkit-border-radius: 50%;
+	     	-moz-border-radius: 50%;
+	     	-o-border-radius: 50%;
+  		border-radius: 50%;
+	     }
+
+	     span[role="control-replacement"]::before {
+  		display: block;
+  		width: 20px;
+  		height: 20px;
+  		border: 1.8px solid #ddd;
+  		cursor: pointer;
+	     }
+
+	     input:focus + span[role="control-replacement"]::before {
+  		border-color: #ddddcc;
+	     }
+
+	     input[type="radio"] + span[role="control-replacement"]::after {
+  		display: none;
+  		background-color:#777777;
+  		padding:6px;
+  		margin-top:4px;
+  		margin-left:4px;
+  		cursor: pointer;
+	     }
+
+	     input[type="checkbox"] + span[role="control-replacement"]::after {
+  		/*content: "✔";*/
+  		content:'\2713';
+  		display: none;
+  		font-weight:bold;
+  		font-size:0.95em;
+  		margin-top:2px;
+  		margin-left:5px;
+  		background-color: transparent;
+  		color:#777777;
+  		cursor: pointer;
+	     }
+
+	     input:checked + span[role="control-replacement"]::after {
+  		display: inline-block;
+  		color:#ffffff !important;
+	     }
+
+ 	     input:checked + span[role="control-replacement"]::before {
+  		background-color:#a9a9a9;
 	     }
 
 	     /* Form Edit-Mode Helpers */
