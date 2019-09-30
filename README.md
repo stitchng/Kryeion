@@ -57,7 +57,7 @@ Kryeion makes it really easy to create custom widgets and simple no-tween effect
                                     <a href="/" class="persona-avatar"><img src="" alt="Avatar" class="flexible"></a> 
                                 </span>
                                 <div class="persona-info">
-                                    <h3>Henry Backer</h3>
+                                    <h3>Henry Banker</h3>
                                     <p>I know about what to do and what not.</p>
                                 </div>
                             </div>
@@ -68,7 +68,7 @@ Kryeion makes it really easy to create custom widgets and simple no-tween effect
                                     <a href="/" class="persona-avatar"><img src="" alt="Avatar" class="flexible"></a> 
                                 </span>
                                 <div class="persona-info">
-                                    <h3>Susan Flowy</h3>
+                                    <h3>Susan Ostien</h3>
                                     <p>I don't know what i think i should do.</p>
                                 </div>
                             </div>
@@ -80,7 +80,7 @@ Kryeion makes it really easy to create custom widgets and simple no-tween effect
                     <section clss="panel">
                         <div class="panel-boxing">
                             <div class="panel-head">
-                                 <h3 class="panel-heading">Welocme!</h3>
+                                 <h3 class="panel-heading">Welcome!</h3>
                             </div>
                             <div class="panel-body">
     
@@ -95,8 +95,8 @@ Kryeion makes it really easy to create custom widgets and simple no-tween effect
                             <p class="table-sidetext-box">
                                  <span class="table-side-text">internals</span>
                             </p>
-                            <table class="table-as-grid" summary="This is a table of costs and balances">
-                                   <caption>Figure 1.0</caption>
+                            <table class="as-sheet" summary="This is a table of costs and balances for the last quater">
+                                   <caption>Listings 1.0</caption>
                                    <thead>
                                          <tr>
                                             <th>S/N</th>
@@ -104,9 +104,8 @@ Kryeion makes it really easy to create custom widgets and simple no-tween effect
                                          </tr>
                                    </thead>
                                    <tbody>
-                                          <tr>
-                                              <th>1</th>
-                                              <td>AdeOlu Ojeringbe</td>
+                                         <tr>
+                                            <td textholder="You have no transactions listed!"><!-- Empty table Body --></td>
                                          </tr>
                                    </tbody>
                             </table>
@@ -138,10 +137,14 @@ Kryeion makes it really easy to create custom widgets and simple no-tween effect
  
                     <!-- NAVIGATION -->
     
-                    <nav class="nav">
+                    <nav class="nav"> 
                           <ul class="nav-menu" data-orientation="horizontal">
-                                 <li class="nav-menu-item"><a href="javascript:void(0);" class="nav-menu-item-button">Home</a></li>
-                                 <li class="nav-menu-item"><a href="javascript:void(0);" class="nav-memu-item-button">About</a></li> 
+                                 <li class="nav-menu-item">
+                                    <a href="javascript:void(0);" class="nav-menu-item-button">Home</a>
+                                 </li>
+                                 <li class="nav-menu-item">
+                                    <a href="javascript:void(0);" class="nav-memu-item-button">About</a>
+                                 </li> 
                           </ul>
                    </nav>
 
@@ -190,55 +193,68 @@ Kryeion makes it really easy to create custom widgets and simple no-tween effect
             
                 <!-- FORMS -->
             
-                <form name="kyc-info" action="/" method="post" enctype="multipart/form-data" kinky-responsive>
-                   <div class="form-control-box" textholder="Choose Things:">
-                      <label has-control="true" control-icon="&#xf078;" for="omlette">
-                         <select name="omlette" class="form-select">
-                           <option>Hello World!</option><option>Good Talk#</option>
+                <form name="kyc-info" action="/" method="post" enctype="multipart/form-data" class="form" kinky-responsive>
+                   
+                   <div class="form-control-box" textholder="Full Name:">
+                      <label for="fullname">
+                         <input name="fullname" placeholder="Full Name" type="text" class="form-input">
+                       </label>
+                   </div>
+                 
+                   <div class="form-control-box" textholder="Gender:">
+                      <label has-control="true" control-icon="&#xf078;" for="gender">
+                         <select name="gender" class="form-select">
+                            <option value="M">Male</option>
+                            <option selected="selected" value="F">Female</option>
                          </select>
                       </label>
                    </div>
   
-                   <div class="form-control-box" textholder="Choose Date:">
-                      <label has-control="true" control-icon="&#xf073;" for="bread">
-                         <input type="text" class="form-datepicker" name="bread" readonly="readonly" placeholder="mm/dd/yy">
+                   <div class="form-control-box" textholder="Date Of Birth:">
+                      <label has-control="true" control-icon="&#xf073;" for="dob">
+                         <input type="text" class="form-datepicker" name="dob" readonly="readonly" placeholder="mm/dd/yy">
                       </label>
                    </div>
   
-                   <div class="form-control-box" textholder="Joyent:">
+                   <div class="form-control-box" textholder="Height:">
+                      <label class="inline" for="height">
+                        <span role="icon-placement" icon="&#xf023;"></span>
+                        <input name="height" placeholder="Height (feet)" type="text" class="form-input">
+                      </label>
+                   </div>
+  
+                   <div class="form-control-box"  textholder="Salary Scale:">
+                      <label for="salary">
+                         <input name="salary" type="range" min="0" max="500000" step="0">
+                      </label>
+                   </div>
+  
+                   <div class="form-control-box">
                       <label for="">
+                         <span role="icon-placement" icon="&#xf1fa;"></span>
                          <input placeholder="Joyent" type="text" class="form-input">
-                       </label>
+                      </label>
                    </div>
   
-                   <div class="form-control-box" textholder="Joyent:">
-                      <label class="inline" for="">
-                      <span role="icon-placement" icon="&#xf023;"></span>
-                     <input placeholder="Joyent" type="text" class="form-input">
-                   </label>
+                   <div class="form-control-box"  textholder="Disabled:">
+                     <label for="disabled">
+                         <input type="checkbox" name="disabled">
+                         <span role="control-replacement">Disabled</span>
+                     </label>
                    </div>
   
-  <div class="form-control-box">
-  <label class="" for="">
-     <input type="range" min="0" max="5000" step="0">
-    </label>
-  </div>
-  
-  <div class="form-control-box">
-  <label class="" for="">
-  <span role="icon-placement" icon="&#xf1fa;"></span><input placeholder="Joyent" type="text" class="form-input">
-  </label>
-  </div>
-  
-  <div class="form-control-box"  textholder="Backus:">
-    <label for="checky"><input type="checkbox" name="checky"><span role="control-replacement">Enable</span></label>
-  </div>
-  
-  <div class="form-control-box" textholder="Guerry:">
-    <label for="oppi" class="inline"><input type="radio" name="oppi"><span role="control-replacement">Yes</span></label>
-    <label  class="inline" for="oppi"><input type="radio" name="oppi"><span role="control-replacement">No</span></label>
-    <p class="note">This is a small tin that can make us happy</p>
-  </div>
+                   <div class="form-control-box" textholder="Married:">
+                     <label class="inline" for="married">
+                        <input type="radio" name="married">
+                        <span role="control-replacement">Yes</span>
+                     </label>
+                     <label class="inline" for="married">
+                        <input type="radio" name="married">
+                        <span role="control-replacement">No</span>
+                     </label>
+                    
+                     <p class="note">This info is not optional.</p>
+                   </div>
                 </form>
             </div>
         </div>
