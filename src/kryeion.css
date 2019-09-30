@@ -1992,7 +1992,9 @@
 
 	     input[type="radio"] + span[role="control-replacement"]::after {
   		display: none;
-  		background-color:#777777;
+  		color: #777777;
+  		background-color: #ffffff;
+  		border-radius:50%;
   		padding:6px;
   		margin-top:4px;
   		margin-left:4px;
