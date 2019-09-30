@@ -555,7 +555,8 @@
 
 	   .yes-ms input[type=range]:focus::-ms-fill-lower,
   	   .yes-ms input[type=range]:focus::-ms-fill-upper,
-	   .yes-ms input[type=range]:focus::-webkit-slider-runnable-track {
+	   .yes-webkit input[type=range]:focus::-webkit-slider-runnable-track,
+	   .yes-blink input[type=range]:focus::-webkit-slider-runnable-track  {
   		background-color: #fafafa;
 	   }
 
@@ -569,14 +570,14 @@
   		border: 0.2px solid #010101;
   		border-radius: 2.6px;
   		box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-	    }
+	   }
 
-	    .yes-ms input[type=range]::-ms-fill-upper {
+	   .yes-ms input[type=range]::-ms-fill-upper {
   		background: #3071a9;
   		border: 0.2px solid #010101;
   		border-radius: 2.6px;
   		box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-	    } 
+	   } 
 
             /* ===== MAIN STYLES [ELEMENTS] ===== */
 
@@ -2128,7 +2129,7 @@
                 border-radius:3px;
             }
 
-            .borderradius .yes-khtml .tablet{ /* W3C Konqueror */
+            .borderradius .yes-khtml .tablet { /* W3C Konqueror */
                -khtml-border-radius:3px;
             }
 
@@ -2270,7 +2271,7 @@
             }
             
             /* 
-                The below rule-set assumes you will lke to use
+                The below rule-set assumes you will like to use
                 CSS3PIE [https://css3pie.com/about] in your
                 web project.
              */
@@ -2324,17 +2325,161 @@
                -ms-overflow-style: none !important; /* IE10+ */
             }
 
+	    /* Tables */
+
+	    .form[kinky-responsive],
+	    .table[kinky-responsive] {
+  		-webkit-box-sizing:border-box;
+  		-moz-box-sizing:border-box;
+  		box-sizing:border-box;
+  		width:auto !important;
+  		max-height:100px;
+	    }
+
+	    .table[h-center] {
+		margin:0 2%;
+	    }
+
+            table {
+	  	color: #f1f1f1;
+  		table-layout:fixed;
+  		background: #ffffff;
+  		font-size: inherit;
+  		display:table !important;
+  		width:100%;
+  		overflow:auto !important;
+            }
+
+	    table[class="as-sheet"] {
+		border: 1px solid transparent;
+		border-style: hidden;
+  		border-collapse: collapse;
+	    }
+
+	    table[class="as-grid"] {
+		border: 1px solid #dddddd;
+		border-collapse: separate;
+            }
+
+	    .table + .table,
+	    table + table {
+  		margin-top:40px;
+	    }
+
+	    table[no-scroll] tbody {
+  		width:auto !important;
+  		position:relative;
+  		height:50px !important; /* Firefox, Chrome */
+	    }
+
+	    table[body-scroll] tbody {
+  		display:block;
+  		width: 100%;
+  		overflow: auto;
+  		height: 100px !important;
+	    }
+
+	    table[no-scroll] tbody tr + tr td[textholder]:empty {
+   		display:none;
+   		visibility:hidden;
+	    }
+
+	    table[no-scroll] tbody tr td[textholder]:empty{
+  		padding:8px 15px;
+  		text-align:center;
+  		vertical-align:middle;
+  		background-color:#f4f4f4;
+	    }
+
+	    table[no-scroll] tbody tr td[textholder]:empty::before {
+  		content:attr(textholder);
+  		color:#222222;
+	    }
+
+	    table[no-scroll] tr {
+  		width:auto !important;
+  		-webkit-box-sizing:border-box;
+	    	-moz-box-sizing:border-box;
+  		box-sizing:border-box;
+	    }
+
+	    table[body-scroll] thead {
+  		background-color: transparent;
+  		color:#888888;
+	    }
+
+	    table[body-scroll] thead tr {
+   		display: block;
+	    }
+
+	    table[no-scroll] thead tr {
+  		color:#888888; /* #A9A9A9 */
+	    }
+
+	    table[no-scroll] tbody tr + tr {
+  		border-top:8px solid #ffffff;
+	    }
+
+	    table[body-scroll] thead th,
+	    table[body-scroll] tfoot th,
+	    table[body-scroll] tbody td {
+  		text-align: center;
+  		min-width: 200px;
+	    }
+
+	    table[no-scroll] th {
+  		font-weight:bold;
+  		width: auto !important;
+	    }
+
+	    table[no-scroll] td {
+  		text-align:center;
+  		text-overflow: ellipsis;
+  		overflow: hidden;
+  		margin-left:-4px;
+	    }
+
+	    table[no-scroll] tbody tr td {
+  		background-color:#dddddd;
+  		color:#999999;
+	    }
+
+	    table[no-scroll] tbody tr td[textholder] {
+   		background-color: transparent !important;
+   		display:block;
+   		position:absolute;
+   		width:100%; /* colspan="6" */
+   		margin-left:-2.5%;
+	    }
+
+	    table[no-scroll] tbody tr td:first-child {
+  		background-color:#555555;
+	    }
+
+	    table[body-scroll] thead th,
+	    table[body-scroll] tfoot th,
+	    table[no-scroll] thead th,
+	    table[no-scroll] tfoot th {
+  		color: inherit;
+  		padding:3px 5px;
+	    }
+
+	    table[body-scroll] tbody td,
+	    table[no-scroll] tbody td {
+  		padding:6px 5px;
+	    }
+
             /* Many Thanks to @aiboy for This Verticl-Text Snippet */
             /* see: https://gist.github.com/aiboy/7406727 */
 
-            .table-sidetext-box,
+            .table .table-sidetext-box,
             .text-rotate-box {
                         display: inline-block;
                         overflow: hidden;
                         width: 1.5em;
             }
 
-            .table-sidetext,
+            .table .table-sidetext,
             .text-rotate.counter-clockwise-90 {
                         display: inline-block;
                         white-space: nowrap;
@@ -2360,43 +2505,19 @@
                         *writing-mode: tb-rl;
             }
 
-            .table-sidetext:before,
-            .text-rotate.counter-clockwise-90:before {
+            .table .table-sidetext::before,
+            .text-rotate.counter-clockwise-90::before {
                    content: "";
                    float: left;
                    margin-top: 100%;
             }
 
-            .table-sidetext {
+            .table .table-sidetext {
                   padding:8px;
                   background-color:#eeeeee;
                   color:#555555;
                   border-top:2px solid #dcdcdb;
              }
-            
-            /*
-              CSS float clear fix enhancements for IE8
-              specifically
-            */
-
-           .clearfix:before,
-           .clearfix:after {
-              content: "\0020";
-              height:0;
-              display:block;
-              overflow: hidden;
-              visibility:hidden;
-              line-height:0;
-              clear: both;
-            }
-
-            /* 
-                CSS float clear fix enhancements IE less than version 8 
-            */
-
-            .yes-old-ms .clearfix { 
-                *zoom: 1;
-            }
 
             /* Panels */
 
@@ -2434,14 +2555,6 @@
 	    .no-flexbox .nav .nav-menu[data-orientation="vertical"] {
 
 	    }
-
-            /* Tables */
-
-            .table {
-                  display:block;
-		  width:100%;   
-                  min-height:250px;
-            }
 
             /* Tiles and Cards */
 
@@ -2504,8 +2617,8 @@
                 margin-top: 0px;
             }
 
-            .fancyheading-pane:before, 
-            .fancyheading-pane:after {
+            .fancyheading-pane::before, 
+            .fancyheading-pane::after {
                 border-top: 1px solid #E1E2E4;
                 content: "";
                 height: 1px;
@@ -2515,11 +2628,11 @@
                 z-index: 0;
             }
 
-            .fancyheading-pane:before{
+            .fancyheading-pane::before{
                 left:-45%;
             }
 
-            .fancyheading-pane:after{
+            .fancyheading-pane::after{
                 left:100%;
             }
 
@@ -2588,7 +2701,7 @@
                 -pie-png-fix:true;
               }
 
-              .flip-vertical{
+              .flip-vertical {
                 filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1);
                 -ms-filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1);
                 -webkit-transform: scale(1, -1);
@@ -2600,14 +2713,38 @@
               }
 
               @-ms-viewport {
-                 width:device-width;
-             }
+                  width:device-width;
+              }
 
               .no-flexbox .kr-row {
                   width:auto !important;
               }
 
               /* Layout and Grid */
+
+	      /*
+              	CSS float clear fix enhancements for IE8
+              	specifically
+              */
+
+              .clearfix:before,
+              .clearfix:after {
+		  content: "\0020";
+              	  height:0;
+              	  display:block;
+              	  overflow: hidden;
+              	  visibility:hidden;
+              	  line-height:0;
+              	  clear: both;
+              }
+
+              /* 
+                CSS float clear fix enhancements IE less than version 8 
+              */
+
+              .yes-old-ms .clearfix { 
+                 *zoom: 1;
+              }
               
               [aria-view-mode="desktop"] .kr-row,
               [aria-view-mode="tablet"] .kr-row {
