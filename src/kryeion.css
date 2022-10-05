@@ -293,7 +293,6 @@
 	    button, input, select, textarea {
 		font: inherit;
     		font-family: inherit;
-    		/*font-size: inherit;*/
     		line-height: inherit;
 	   }
 
@@ -706,6 +705,16 @@
 	    .text-truncate.no-overflow {
 		overflow: hidden;
 	    }
+
+	    .text-wrap {
+	      	overflow-wrap: break-word;
+	      	word-break: break-all;
+	      	word-wrap: break-word;
+	   	-webkit-hyphens: auto; 
+                -moz-hyphens: auto; 
+                -epub-hyphens: auto; 
+	      	hyphens: auto;
+    	    }
 
             .text-leftmost,
             .no-flexbox .tab-box.anchor-left {
@@ -2759,6 +2768,23 @@
               }
 
               /* Layout and Grid */
+
+		.grid {
+		  -webkit-box-align: center;
+		      -ms-flex-align: center;
+			  align-items: center;
+		  display: -webkit-box;
+		  display: -ms-flexbox;
+		  display: flex;
+		  -webkit-box-pack: justify;
+		      -ms-flex-pack: justify;
+			  justify-content: space-between;
+		  -ms-flex-wrap: wrap;
+		      flex-wrap: wrap;
+		  text-align: center;
+  		  max-width: 100%;
+  		  margin: 0px auto;
+		}
 
 		  .container {
 		    display: block;
