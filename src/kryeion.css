@@ -17,7 +17,9 @@
 
             @supports (height: 100vh) {
                    .expand-fill-vertical {
-                          height: 100vh;           
+		  	height: 100vh;
+		    	height: 100svh;
+		    	height: 100dvh;          
                    }
             }
 
@@ -39,7 +41,7 @@
             hgroup, 
             nav, 
             section { 
-                display:block; 
+                display: block; 
             }
 
             audio, 
@@ -51,12 +53,26 @@
             }
 
             /** Base Styles **/
+	    html {
+	    	height: 100vh;
+		height: 100svh;
+		height: 100dvh; 
+		position: relative;
+		color-scheme: light dark;
+		font-size: 16px;
+	    }
 
             body { 
-                 margin: 0; 
-                 font-size: 13px; 
-                 line-height: 1.4; 
+                 margin: 0;
+	    	 padding: 0;
+                 line-height: 1.5; 
 		 -webkit-font-smoothing: subpixel-antialiased;
+		 height: 100%;
+	    	 box-sizing: content-box;
+	    	 -moz-box-sizing: content-box;
+	    	 -webkit-box-sizing: content-box;
+	    	 display: block;
+	    	 font-size: 100%;
             }
 
             body, 
@@ -64,9 +80,14 @@
             input, 
             select, 
             textarea { 
-		  font-family: -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-		  color: #000;
+		  font-family: -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", system-ui, sans-serif;
+		  color: #000000;
             }
+
+	    :focus,
+	    :focus-visible {
+	  	outline: 0.05cm dotted #CBCBCB;
+	    }
 
             /** Old IE Fixes **/
 
@@ -74,6 +95,14 @@
                border: 0; 
                -ms-interpolation-mode: bicubic; 
             }
+
+	    @supports (max-inline-size: 100%) and (max-block-size: 100%) {
+	    	/* For images to not be able to exceed their container */
+		img {
+		    max-inline-size: 100%;
+		    max-block-size: 100%;
+	    	}
+	    }
 
             svg:not(:root) { 
                 overflow: hidden; 
@@ -83,34 +112,49 @@
                 margin: 0; 
             }
 
+	    /* Lists */
+
+	    /**** Remove list styles (bullets/numbers) */
+	    ol, ul, menu {
+     		list-style: none;
+	    }
+
             /** Links **/
             
-            a[href="#"],
-            a[href="javascript:void(0);"] {
-                 text-decoration:none;
+            a[href^="#"] {
+                 text-decoration: none;
             }
 
-            a:focus { 
+            a:focus,
+	    a:focus-visible {
                 outline: thin dotted; 
             }
 
             a:hover, 
             a:active { 
-                outline: 0; 
+                outline: thin solid; 
             }
+
+	    /* Reapply the pointer cursor for anchor tags */
+	    a, button {
+    		cursor: revert;
+	    }
 
             /** Typography **/
 
             h1 { 
                 font-size: 2em; /* fixes html5 bug */
-            } 
+            }
 
             p { 
-                -webkit-hyphens: auto; 
+                -webkit-hyphens: auto;
+		-ms-hyphens: auto;
                 -moz-hyphens: auto; 
                 -epub-hyphens: auto; 
-                hyphens: auto; 
-	    	margin:0;
+                hyphens: auto;
+		overflow-wrap: break-word;
+		word-wrap: break-word;
+	    	margin: 0;
             }
 
             abbr[title] { 
@@ -134,14 +178,14 @@
 
             ins, 
             .ins { 
-                background: #ff9; 
-                color: #000; 
+                background: #FFFF99; 
+                color: #000000; 
                 text-decoration: none; 
             }
 
             mark, 
             .mark { 
-                background: #ff0; 
+                background: #FFFF00; 
                 color: #000; 
                 font-style: italic; 
             }
@@ -173,7 +217,7 @@
             }
 
             blockquote { 
-                margin: 1.5em 40px; 
+                margin: 1.5em 2em; 
             }
 
             q { 
@@ -187,7 +231,7 @@
             }
 
             ul, ol { 
-                margin: 1.5em 0; 
+                margin: 0; 
                 padding: 0; 
             }
 
@@ -222,13 +266,33 @@
               padding: 0;
             }
 
+	    /* Avoid text overflows */
+	    h1, h2, h3, h4, h5, h6 {
+    		overflow-wrap: break-word;
+    		word-wrap: break-word;
+	    }
+
+	    h1, h2, h3, h4, h5, h6, a {
+                text-rendering: optimizeSpeed;
+            }
+
             img,
             embed,
+	    picture,
+	    canvas,
             object,
             audio,
             video {
               max-width: 100%;
+	      display: block;
             }
+
+
+	     /* minimum style to allow to style meter element */
+	     meter {
+    		-webkit-appearance: revert;
+    		appearance: revert;
+	     }
 
             iframe {
               border: 0;
@@ -255,11 +319,13 @@
             form ol, 
             fieldset ol, 
             fieldset ul { 
-                 list-style: none; 
-                 list-style-image: none; 
-                 margin: 0;
-                 border: 0;
+                 list-style-image: none;
             }
+	
+	    /* remove default dot (•) sign */
+	    ::marker {
+		content: initial;
+	    }
 
             /* Position subscript and superscript content without affecting line-height: gist.github.com/413930 */
 
@@ -276,109 +342,140 @@
 
             sub { 
                  bottom: -0.25em; 
-                 bottom:1ex; 
+                 bottom: 1ex; 
             }
 
-            /** Form Resets **/
+            /** Form Elements **/
 
             fieldset {
-                 position:relative;
+                 position: relative;
             }
 
             legend { 
                  border: 0; 
-                 *margin-left: -7px; 
+                 *margin-left: -0.438rem; 
             }
 
 	    button, input, select, textarea {
 		font: inherit;
     		font-family: inherit;
     		line-height: inherit;
-	   }
+	    }
 
-	   button, select {
+	    button, select {
                 text-transform: none;
-           }
+            }
 
-            button, 
-            input, 
-            select, 
-            textarea { 
+	    /* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
+	    .yes-webkit input,
+	    .yes-webkit textarea {
+    		-webkit-user-select: auto;
+	    }
+
+	    /* Remove built-in styles on input tags */
+	    .yes-webkit input[type=number]::-webkit-outer-spin-button,
+	    .yes-blink input[type=number]::-webkit-outer-spin-button {
+	    	-webkit-appearance: none;
+	    	margin: 0;
+	     }
+		
+	     .yes-webkit input[type=number]::-webkit-inner-spin-button,
+	     .yes-blink input[type=number]::-webkit-inner-spin-button{
+	    	display: none;
+	     }
+
+	     .yes-moz input[type=number] {
+                -moz-appearance: textfield;
+             }
+
+             button, 
+             input, 
+             select, 
+             textarea {
+		  font: inherit;
                   font-size: 100%; 
                   margin: 0; 
                   vertical-align: baseline; 
                   *vertical-align: middle; 
-            }
+             }
 
-	    span.combo-box {
+	     span.combo-box {
 		  display:inline-block;
-		  padding:0px 14px 1px 0px;
+		  padding: 0 0.875rem 0.063rem 0;
 		  margin:0;
 		  position:relative;
-		  border:1px solid #bdbdbd;
-	    }
+		  border: 0.063rem solid #bdbdbd;
+	     }
 
-	    /* IE 10+ only */
-	    .form-select::-ms-expand,
-	    select::-ms-expand {
+	     /* IE 10+ only */
+	     .form-select::-ms-expand,
+	     select::-ms-expand {
 		  display: none;
-	    }
+	     }
 
 	    span.combo-box select > option {
 		  background-color:#a4a4a4;
 		  color:#ffffff;
 	    }
 
-	    span.combo-box > select{
-		  display:inline-block;
-		  position:absolute;
-		  top:3px;
-		  left:0;
-		  border:none;
-		  width:100%;
-		  -moz-apperance:none;
-		  -webkit-appearance:none;
-		  text-indent: 1px; /* Firefox 30- */
-		  text-overflow: '';
-		  appearance:none;
-		  opacity:0;
+	    span.combo-box > select {
+		  display: inline-block;
+		  position: absolute;
+		  top: 0.188rem;
+		  left: 0;
+		  border: none;
+		  width: 100%;
+		  -moz-apperance: -moz-none;
+		  -webkit-appearance: none;
+		  text-indent: 0.063rem; /* Firefox 30- */
+		  text-overflow: clip;
+		  -o-text-overflow: clip;
+		  appearance: none;
+		  opacity: 0;
 	    }
 
 	    span.combo-box[dimed]{
-		  min-width:60px;
+		  min-width: 3.75rem;
 	    }
 
 	    span.combo-box::before,
 	    span.combo-box::after {
-		  display:inline-block;
-		  position:relative;
-		  float:left;
+		  display: inline-block;
+		  position: relative;
+		  float: left;
 	    }
 
 	    span.combo-box::before {
-		  text-indent:6px;
-		  pointer-events:none;
-		  color:#a424ba;
+		  text-indent: 0.375rem;
+		  pointer-events: none;
+		  color: #A424BA;
 		  content: attr(placeholder) "  ";
 	    }
 
-	    span.combo-box::after{
+	    span.combo-box::after {
 		  content: "\25bc";
-	    	  width: 2px;
+	    	  width: 0.125rem;
 		  font-size: 60%;
-		  height: 2px;
-		  top:5px;
-		  margin-left: 8px;
+		  height: 0.125rem;
+		  top: 0.313rem;
+		  margin-left: 0.5rem;
 		  pointer-events: none;
+	    }
+
+	    @supports (white-space: revert) {
+		/* revert the 'white-space' property for textarea elements on Safari */
+		textarea {
+		      white-space: revert;
+		}
 	    }
 
             textarea { 
                   overflow: auto; 
-                  vertical-align: top; 
+                  vertical-align: top;
             }
 
-            button, 
-            input { 
+            .old-webkit button, 
+            .old-webkit input { 
                   line-height: normal; 
             }
 
@@ -396,7 +493,7 @@
 	    input[type="password"]:invalid,
 	    input[type="text"]:invalid,
 	    input[type="email"]:invalid {
-		border: 1px solid #F2000B;
+		border: 0.063rem solid #F2000B;
 	    	color: #F2000B;
 	    	-webkit-box-shadow: none;
 	        -moz-box-shadow: none;
@@ -433,7 +530,7 @@
 
 	    [aria-os-data="Macintosh"] input,
             [aria-os-data="Macintosh"] textarea {
-                 -webkit-text-stroke-width:.2px;
+                 -webkit-text-stroke-width: 0.013rem;
             }
 
             .yes-moz .full-screener:-moz-full-screen,
@@ -441,17 +538,18 @@
 	    .yes-blink .full-screener:-webkit-full-screen,
             .yes-ms .full-screener:-ms-fullscreen, 
             .full-screener:fullscreen {
-                        background-color:rgba(0,0,0, 0.32);
+                        background-color: rgba(0, 0, 0, 0.32);
             }
 
+	    /* reset default text opacity of input placeholder */
             .yes-webkit ::-webkit-input-placeholder, /* Chrome 4-51/Safari */
 	    .yes-blink ::-webkit-input-placeholder, /* Chrome 52+/Opera 15+ */
             .yes-moz :-moz-placeholder, /* Firefox 18- */
-            .yes-ms ::-moz-placeholder, /* Firefox 19+ */
+            .yes-moz ::-moz-placeholder, /* Firefox 19+ */
             .yes-ms :-ms-input-placeholder, /* Edge/IE 10 */
 	    .yes-ms ::-ms-input-placeholder, /* Edge 15+/IE 11 */
 	    ::placeholder {
-                color:#e4e4e4;
+                color: #E4E4E4;
             }
 
             .yes-webkit input[type=date]::-webkit-clear-button,
@@ -466,22 +564,13 @@
                 display: none;
             }
 
-            input[type=number]::-webkit-outer-spin-button,
-            input[type=number]::-webkit-inner-spin-button {
-                -webkit-appearance: none;
-                margin: 0;
-            }
-
-            input[type=number] {
-                -moz-appearance:textfield;
-            }
-
-            input[type=date]::-webkit-datetime-edit {
-                letter-spacing:0;
+            .yes-webkit input[type=date]::-webkit-datetime-edit {
+                letter-spacing: 0;
             }
 
 	   input[type=range], input[as-range] {
   		-webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+		-moz-appearance: -moz-none;
   		width: 100%; /* Specific width is required for Firefox. */
   		background: transparent; /* Otherwise white in Chrome */
 	   }
@@ -588,18 +677,17 @@
                 -webkit-box-sizing: border-box;
 		-o-box-sizing:border-box;
                 box-sizing: border-box;
-                outline: 0 !important;
             }
 
             svg, math {
                -ms-box-sizing: inherit;
                -moz-box-sizing: inherit;
                -webkit-box-sizing: inherit;
-                      box-sizing: inherit;
+	       box-sizing: inherit;
             }
 
-            html.full-text-size {
-                font-size:100%; 
+            .full-text-size {
+                font-size: 100%; 
             }
  
             html.full-height, 
@@ -618,10 +706,6 @@
                  -ms-text-size-adjust: 100%;
                      text-size-adjust: 100%;
                 text-rendering: optimizelegibility;
-            }
- 
-            h1, h2, h3, h4, h5, h6, a {
-                text-rendering: optimizeSpeed;
             }
 
             [role="header"],
@@ -652,27 +736,27 @@
 
             strike,
             .strike {
-              text-decoration:line-through;
+              text-decoration: line-through;
             }
 
             .smaller-text {
-                font-size:xx-small;
+                font-size: xx-small;
             }
 
             .small-text {
-                font-size:small;
+                font-size: small;
             }
 
             .medium-text {
-                font-size:large;
+                font-size: large;
             }
 
             .large-text {
-                font-size:x-large;
+                font-size: x-large;
             }
 
             .larger-text {
-                font-size:xx-large;
+                font-size: xx-large;
             }
 
             .text-lowercase {
@@ -689,16 +773,17 @@
             }
 
             .text-hide {
-                text-indent:-9999px;
+                text-indent: -9999px;
                 color: transparent;
                 text-shadow: none;
-                background-color:transparent;
-                border:0;
+                background-color: transparent;
+                border: 0;
             }
 
             .text-truncate {
-                text-overflow:ellipsis;
-                white-space:nowrap;
+                text-overflow: ellipsis;
+		-o-text-overflow: ellipsis;
+                white-space: nowrap;
 		overflow: auto;
             }
 
@@ -706,11 +791,15 @@
 		overflow: hidden;
 	    }
 
+	    .text-truncate.clip-overflow {
+		overflow: clip;
+	    }
+
 	    .text-wrap {
 	      	overflow-wrap: break-word;
-	      	word-break: break-all;
 	      	word-wrap: break-word;
-	   	-webkit-hyphens: auto; 
+	   	-webkit-hyphens: auto;
+		-ms-hyphens: auto;
                 -moz-hyphens: auto; 
                 -epub-hyphens: auto; 
 	      	hyphens: auto;
@@ -728,23 +817,48 @@
 
             .text-rightmost,
             .no-flexbox .tab-box.anchor-right {
-                text-align:right;
+                text-align: right;
             } 
 
             .no-flexbox .push-to-left {
-                float:left;
+                float: left;
             }
 
             .no-flexbox .push-to-right {
-                float:right;
+                float: right;
             }
 
 	    .flexbox .push-to-left {
-		justify-self:flex-start;
+		justify-self: flex-start;
 	    }
 
 	    .flexbox .push-to-right {
-		justify-self:flex-end;
+		justify-self: flex-end;
+	    }
+
+	    .flexbox .flex-flexible {
+	    	flex: auto; /* Override back to default */
+	  	-webkit-flex: auto;
+	  	-moz-flex: auto;
+	  	-ms-flex: auto;
+	    }
+	
+	    .flexbox .flex-fixed-\[\+350\] {
+	    	flex-basis: 21.875rem;
+	    }
+	
+	    .flexbox .flex-fixed-collaspable {
+		flex-shrink: 0;
+	    	-webkit-flex-shrink: 0;
+	    	min-width: 0;
+	    }
+	
+	    .flexbox .flex-fluid {
+	    	flex-basis: auto; /* Override back to default */
+	    	flex: 1;
+	    	-webkit-flex: 1;
+		-moz-flex: 1;
+		-ms-flex: 1;
 	    }
 
 	    .text-centered.complete,
@@ -754,21 +868,21 @@
 	    }
 
 	    .kr-transparency-30 {
-                opacity:0.7;
-                -ms-filter:"alpha(opacity=70)";
-                filter:alpha(opacity=70);
+                opacity: 0.7;
+                -ms-filter: "alpha(opacity=70)";
+                filter: alpha(opacity=70);
             }
 
             .kr-transparency-50 {
-                opacity:0.5;
-                -ms-filter:"alpha(opacity=50)";
-                filter:alpha(opacity=50);
+                opacity: 0.5;
+                -ms-filter: "alpha(opacity=50)";
+                filter: alpha(opacity=50);
             }
 
             .kr-transparency-80 {
-                opacity:0.2;
-                -ms-filter:"alpha(opacity=20)";
-                filter:alpha(opacity=20);
+                opacity: 0.2;
+                -ms-filter: "alpha(opacity=20)";
+                filter: alpha(opacity=20);
             }
 
 	    .kr-spaced[data-left-measure]::before {
