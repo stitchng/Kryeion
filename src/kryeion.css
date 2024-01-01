@@ -4,7 +4,8 @@
 /**!
  * @version: v0.1.7
  * @name: Kryeion (https://github.com/isocroft/Kryeion)
- * @copyright: Copyright (c) 2017 - 2022, Stitch - Oparand Ltd.
+ * @copyright: Copyright (c) 2017 - 2024, Stitch - Oparand Ltd.
+ *
  * @license: MIT (https://github.com/iscroft/Kryeion/blob/master/LICENSE)
  *
  * @author: Ifeora Okechukwu (https://twitter.com/isocroft - @isocroft)
@@ -812,7 +813,7 @@
 
             .text-centered,
             .no-flexbox .tab-box.anchor-middle {
-                text-align:center;
+                text-align: center;
             } 
 
             .text-rightmost,
@@ -887,143 +888,152 @@
 
 	    .kr-spaced[data-left-measure]::before {
 		  content: '.';
-                  margin-left:attr(data-left-measure) !important;
+                  margin-left: attr(data-left-measure) !important;
             }
 
             .kr-spaced[data-right-measure]::before {
 		  content: '.';
-                  margin-right:attr(data-left-measure) !important;
+                  margin-right: attr(data-left-measure) !important;
             }
 
             .kr-spaced[data-top-measure]::before {
 		  content: '.';
-                  margin-left:attr(data-top-tag) !important;
+                  margin-left: attr(data-top-tag) !important;
             }
 
             .kr-spaced[data-bottom-measure]::before {
 		  content: '.';
-                  margin-bottom:attr(data-bottom-measure) !important;
+                  margin-bottom: attr(data-bottom-measure) !important;
             }
 
             .card,
             .relative,
 	    .modal-boxing,
             .button-sub-pack[role="dropdwn-box"] {
-                position:relative;
+                position: relative;
             }
 
             .absolute,
 	    .modal-container,
             .operamini .fixed,
             .button-sub-pack > .button-dropdown {
-                position:absolute;
+                position: absolute;
             }
                         
             .fixed,
 	    .modal {
-                position:fixed;
+                position: fixed;
             }
 
             .sticky {
                 position: -webkit-sticky;
                 position: sticky;
-                top: -1px;
+                top: 0;
             }
 
+	    .sticky.offset-\[x1\] {
+	      top: 0.625rem;
+	    }
+
+	    .sticky.offset-\[x2\] {
+	      top: 1.25rem;
+	    }
+
             .snap-off {
-              top:0;
-              left:-9999px;
+              top: 0;
+              left: -9999px;
             }
 
             .snap-top {
-              top:0;
-              left:auto;
+              top: 0;
+              left: auto;
             }
 
             .snap-left {
-              top:auto;
-              left:0;
+              top: auto;
+              left: 0;
             }
 
             .snap-bottom {
-                top:auto;
-                bottom:0;
+                top: auto;
+                bottom: 0;
             }
 
             .snap-right {
-                left:auto;
-                right:0;
+                left: auto;
+                right: 0;
             }
 
             .snap-center-axis {
-               top:50%;
-               left:50%;
-               margin-left:-25%;
-               margin-top:-25%;
+               top: 50%;
+               left: 50%;
+               margin-left: -25%;
+               margin-top: -25%;
             }
 
             .snap-top-center{
                 top: 50%;
-                left:auto;
+                left: auto;
             }
 
             .snap-left-center{
                 top: auto;
-                left:50%;
+                left: 50%;
             }
 
             .snap-top-left-center {
-                top:0;
-                left:50%;
+                top: 0;
+                left: 50%;
             }
 
             .snap-left-top-center {
-                top:50%;
-                left:0;
+                top: 50%;
+                left: 0;
             }
 
             .snap-top-left {
-                top:0;
-                right:auto;
-                left:0;
+                top: 0;
+                right: auto;
+                left: 0;
             }
 
             .snap-top-right {
-                top:0;
-                left:auto;
-                right:0;
+                top: 0;
+                left: auto;
+                right: 0;
             }
 
             .full-width {
-		max-width:100%;
+		max-width: 100%;
+		width: 100%;
 		*width: expression(this.clientWidth > this.parentNode.clientWidth ? this.parentNode.clientWidth + "px" : this.clientWidth + "px");
 		margin-left:0;
 		margin-right:0;
             }
 
             .gridded-container {
-		margin-left:auto;
-		margin-right:auto;
+		margin-left: auto;
+		margin-right: auto;
 		position: relative;
             }
 
             [aria-view-mode="tv"] .gridded-container {
-		max-width:1180px;
+		max-width: 73.75rem;
 		*width: expression(document.body.clientWidth > 1179 ? "1180px" : "auto" ); 
             }
 
             [aria-view-mode="desktop"] .gridded-container {
-		max-width:980px;
+		max-width: 61.25rem;
 		*width: expression(document.body.clientWidth > 979 ? "980px" : "auto" ); 
             }
 
             [aria-view-mode="tablet"] .gridded-container {
-		max-width:690px;
+		max-width: 43.125rem;
 		*width:expression(document.body.clientWidth > 689 ? "690px" : "auto" );
             }
 
             [aria-view-mode="mobile"] .gridded-container {
-		max-width:100%;
+		max-width: 100%;
 		*width: expression(this.clientWidth > this.parentNode.clientWidth ? this.parentNode.clientWidth + "px" : this.clientWidth + "px");
 		margin-left:0;
 		margin-right:0;
@@ -1031,13 +1041,13 @@
 
             /* CSS Tricks - [adapted from Chris Coyier]  https://css-tricks.com/almanac/properties/b/box-shadow/ */
 
-            .add-shadow {
-		margin: 40px;
-		background-color: rgb(68,68,68); /* Needed for IEs */
-		-moz-box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
-		-webkit-box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
-	    	-o-box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
-		box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
+            .add-full-shadow {
+		margin: 2.5rem;
+		background-color: rgb(68, 68, 68); /* Needed for IEs */
+		-moz-box-shadow: 0.313rem 0.313rem 0.313rem 0 rgba(68, 68, 68, 0.6);
+		-webkit-box-shadow: 0.313rem 0.313rem 0.313rem 0 rgba(68, 68, 68, 0.6);
+	    	-o-box-shadow: 0.313rem 0.313rem 0.313rem 0 rgba(68, 68, 68, 0.6);
+		box-shadow: 0.313rem 0.313rem 0.313rem 0 rgba(68, 68, 68, 0.6);
 		filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=3,MakeShadow=true,ShadowOpacity=0.30);
 		-ms-filter: "progid:DXImageTransform.Microsoft.Blur(PixelRadius=3,MakeShadow=true,ShadowOpacity=0.30)";
 		zoom: 1;
@@ -1054,16 +1064,16 @@
 
             audio:not([controls]),
             [conceal] {
-               display:none; 
+               display: none; 
             }
 
             .hidden,
             [hidden] {
-                display:block;
-                visibility:hidden;
-                opacity:0;
-                -ms-filter:"alpha(opacity=0)";
-                filter:alpha(opacity=0);
+                display: block;
+                visibility: hidden;
+                opacity: 0;
+                -ms-filter: "alpha(opacity=0)";
+                filter: alpha(opacity=0);
             }
 
 	    .draggable,
@@ -1078,24 +1088,23 @@
 	    }
 
             img[longdesc]::after {
-                content:attr(longdesc);
-                display:inline-block;
-                position:relative;
-                top:120%;
+                content: attr(longdesc);
+                display: inline-block;
+                position: relative;
+                top: 120%;
             }
 
             ul:empty {
-                height:100px;
-                line-height:100px;
+        	min-height: 0;
             }
 
             ul:empty::before {
-                content:attr(data-empty-text);
-                display:block;
-                text-align:center;
-                text-transform:capitalize;
-                color: #32e1f0;
-                font-weight:bold;
+                content: attr(data-empty-text);
+                display: block;
+                text-align: center;
+                text-transform: capitalize;
+                color: #32E1F0;
+                font-weight: bold;
             }
 
 	   /* Images */
@@ -1113,49 +1122,49 @@
 	    /* Stylish Heading / Content Rule  */
 
 	    .kr-hr {
-		 background-color:transparent !important;
-		 margin:20px 1px 35px;
-		 padding:10px 15px !important;
-		 position:relative;
-         	border-bottom:1px solid #acacac !important;
+	 	background-color: transparent !important;
+	 	margin: 1.25rem 0.063rem 2.188rem;
+	 	padding: 0.625rem 15px !important;
+	 	position: relative;
+         	border-bottom: 0.063rem solid #ACACAC !important;
 	    }
 
 	   .kr-hr:before {
-		 position:absolute;
-		 display:block;
-		 border-color:transparent;
-		 border-style:solid;
-		 bottom:-14px;
-		 left:45px;
-		 border-top-color:#acacac;
+		 position: absolute;
+		 display: block;
+		 border-color: transparent;
+		 border-style: solid;
+		 bottom: -14px;
+		 left: 45px;
+		 border-top-color:#ACACAC;
 		 content:" ";
-		 border-width:7px;
-		 box-sizing:border-box !important;
-		 z-index:2;
+		 border-width: 7px;
+		 box-sizing: border-box !important;
+		 z-index: 2;
 	    }
 
 	    .kr-hr:after {
 		 position:absolute;
-		 display:block;
-		 border-color:transparent;
-		 border-style:solid;
-		 bottom:-11px;
-		 left:46px;
-		 border-top-color:#ffffff;
-		 content:" ";
-		 border-width:6px;
-		 box-sizing:border-box !important;
-		 z-index:2;
+		 display: block;
+		 border-color: transparent;
+		 border-style: solid;
+		 bottom: -11px;
+		 left: 46px;
+		 border-top-color: #FFFFFF;
+		 content: " ";
+		 border-width: 6px;
+		 box-sizing: border-box !important;
+		 z-index: 2;
      	    }
 
             /* Icons */
 
             i.kr-icon {
 		display:inline-block;
-		padding:6px;
-		text-align:center;
-		line-hieght:16px;
-		width:23px; /* 1em */
+		padding: 6px;
+		text-align: center;
+		line-hieght: 16px;
+		width: 23px; /* 1em */
 	    	/* height:23px; 1em */
 		box-sizing:content-box !important;
             }
