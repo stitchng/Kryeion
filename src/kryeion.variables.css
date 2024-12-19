@@ -1,0 +1,166 @@
+/* Variables organized by ITCSS layers with scoping */
+
+/* @NOTE: There might be some performance hits with the way CSS variables are setup here */
+
+/**!
+ * SETTINGS
+ */
+
+:root {
+  --settingsCustomSecondaryWoff2FontUrl: url("https://github.com/JulietaUla/Montserrat/raw/master/fonts/webfonts/Montserrat-Regular.woff2") format('woff2');
+  --settingsCustomSecondaryWoffFontUrl: url("https://github.com/JulietaUla/Montserrat/raw/master/fonts/webfonts/Montserrat-Regular.woff") format('woff');
+  --settingsCustomPrimaryFontName: 'Page Sans';
+  --settingsCustomSecondaryFontName: 'Montserrat';
+  --settingsFontNormal: normal;
+  --settingsFontweightLighter: 200;
+  --settingsFontweightLight: 300;
+  --settingsFontweightNormal: 400;
+  --settingsFontweightMedium: 500;
+  --settingsFontweightSemiBold: 600;
+  --settingsFontweightBold: 700;
+  --settingsFontweightBolder: 900;
+  --settingsFontsize-2: 0.125rem;
+  --settingsFontsize-4: 0.25rem;
+  --settingsFontsize-6: 0.375rem;
+  --settingsFontsize-8: 0.5rem;
+  --settingsFontsize-12: 0.75rem;
+  --settingsFontsize-16: 1rem;
+  --settingsFontsize-20: 1.25rem;
+  --settingsFontsize-24: 1.5rem;
+  --settingsFontsize-28: 1.75rem;
+  --settingsFontsize-32: 2rem;
+  --settingsFontsize-36: 2.25rem;
+  --settingsFontsize-40: 2.5rem;
+  --settingsFontsize-44: 2.75rem;
+  --settingsFontsize-48: 3rem;
+  --settingsFontsize-64: 4rem;
+  --settingsFontsize-80: 5rem;
+  --settingsFontsize-96: 6rem;
+  --settingsFontsize-112: 7rem;
+  --settingsFontsize-128: 8rem;
+  --resetGlobalFgColor: #000000;
+  --resetGlobalBgColor: #FFFFFF;
+  --resetOutlineColor: #CBCBCB;
+  --resetOutlineWidth: 0.05cm;
+  --resetOutline: 0.05cm dotted #CBCBCB;
+  --resetHrTopBorderColor: #CCCCCC;
+  --resetHrTopBorder: 1px solid #CCCCCC;
+  --resetHrMargin: 1em 0;
+  --resetDefaultBoxDimension: 1px;
+  --resetFontFamilyIE: 'Courier New';
+  --resetTextStrokeWidth: 0.013rem;
+  --resetFormElementBorderWidth: 0.063rem;
+  --resetFormElementFgColor: #F2000B;
+  --resetFormElementBorder: 0.063rem solid #F2000B;
+  --resetFormElementPlaceholderColor: #E4E4E4;
+  --resetDefaultGapWidth: 1em;
+  --resetDefaultFontSize: 1em;
+  --resetInsBgColor: #FFFF99;
+  --resetMarkBgColor: #FFFF00;
+  --resetSubBottomOffsetStatic: -0.25em;
+  --resetLegendLeftOffsetStatic: -0.438rem;
+  --resetDefaultFormElementBgColor: #777777;
+  --resetDefaultWidgetDimension: 1em;
+  --resetDefaultSvgIconDimension: 1.5em;
+  --resetdefaultBorderHidden: 1px solid transparent;
+  --resetBorderColor: #BDBDBD;
+}
+
+/* ICON FONT */
+@font-face {
+  font-family: FontAwesome;
+  src: url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.eot?v=4.7.0");
+  src: url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0") format('embedded-opentype'),
+    url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0") format('woff2'),
+    url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.woff?v=4.7.0") format('woff'),
+    url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.ttf?v=4.7.0") format('truetype'),
+    url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format('svg');
+  font-weight:normal;
+  font-style:normal;
+}
+
+/* CUSTOM PRIMARY FONT */
+@font-face {
+  font-family: var(--settingsCustomPrimaryFontName);
+  font-display: swap;
+  font-style: normal;
+  font-weight: var(--settingsFontweightNormal);
+  src: local('Verdana'), local('Arial'), local(sans-serif);
+}
+
+/* CUSTOM SECONDARY FONT */
+@font-face {
+  font-family: var(--settingsCustomSecondaryFontName);
+  font-stretch: var(--settingsFontNormal);
+  font-style: var(--settingsFontNormal);
+  font-weight: var(--settingsFontNormal);
+  src: var(--settingsCustomSecondaryWoff2FontUrl),
+    var(--settingsCustomSecondaryWoffFontUrl);
+}
+
+/**!
+ * GENERICS
+ */
+body {
+  --baseGlobalEasingLinear: cubic-bezier(0, 0, 1, 1);
+  --baseGlobalEasingEaseIn: cubic-bezier(0.7, 0.1, 0.75, 0.9);
+  --baseGlobalEasingEaseOut: cubic-bezier(0.16, 1, 0.3, 1);
+  --baseGlobalEasingEaseInOut: cubic-bezier(0.6, 0, 0.2, 1);
+  --baseGlobalDuration-0: 0ms;
+  --baseGlobalDuration-75: 75ms;
+  --baseGlobalDuration-200: 200ms;
+  --baseGlobalDuration-300: 300ms;
+  --baseGlobalDuration-400: 400ms;
+  --baseGlobalDuration-500: 500ms;
+  --baseGlobalDuration-600: 600ms;
+  --baseGlobalDuration-700: 700ms;
+  --baseGlobalDuration-800: 800ms;
+  --baseGlobalDuration-900: 900ms;
+  --baseGlobalDuration-1000: 1s;
+  --baseGlobalFgColor: #FFFFFF;
+  --baseGlobalFontIcon: 'FontAwesome';
+  --baseGlobalCaretDown: "\f0d7";
+  --baseGlobalCaretUp: "\f0d8";
+  --baseGlobalCaretLeft: "\f0d9";
+  --baseGlobalCaretRight: "\f0da";
+  --baseGlobalRelativeFontSize: 100%;
+  --baseGlobalFontLineHeight: 1.5;
+  --baseGlobalFontFamily: -apple-system, "BlinkMacSystemFont", "Segoe UI", "Oxygen", "Ubuntu", "Fira Sans", "Droid Sans", "Helvetica Neue", system-ui, sans-serif
+}
+
+/**!
+ * ELEMENTS
+ */
+.sticky {
+  --utilityTopOffsetSticky: 0.625rem;
+}
+
+.full-screener {
+  --utilityFullscreenBgColor: rgba(0, 0, 0, 0.32);
+}
+
+[data-combobox] {
+  --utilityComboTextIndent: 1.008px;
+  --utilityComboBorder: 1.008px solid #BDBDBD;
+  --utilityComboTopOffsetAbsolute: 0.188rem;
+  --utilityComboAfterPseudoBoxDimension: 0.125rem;
+  --utilityComboPadding: 0 0.875rem 0.063rem 0;
+  --utilityComboFgColor: #FFFFFF;
+  --utilityComboBgColor: #A4A4A4;
+  --utilityComboBeforePseudoFgColor: #A424BA;
+  --utilityComboAfterPseudoFontSize: 60%;
+  --utilityComboBeforePseudoTextIndent: 6px;
+}
+
+[data-menubox] {
+  --utilityMenuBoxPadding: 0.625rem 0.3125rem;
+}
+
+/**!
+ * OBJECTS
+ */
+
+
+/**!
+ * COMPONENTS
+ */
